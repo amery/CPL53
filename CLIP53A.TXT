@@ -1,0 +1,2848 @@
+CA-Clipper Release Notes
+Version 5.3a International
+May 1996
+
+
+CONTENTS
+========
+1.  Installation Instructions
+2.  CA-Clipper 5.3a Files
+3.  What's Fixed in CA-Clipper 5.3a
+4.  Other CA-Clipper 5.3 Patches
+5.  About The New Stuff In CA-Clipper 5.3
+6.  About The New Stuff In CA-Clipper 5.3a
+7.  Documentation Updates
+8.  CA-Clipper File Descriptions
+9.  How To Use The Mouse
+10. Additional Comix/FlexFile Documentation
+11. Additional Blinker Documentation
+12. CA-Clipper Workbench Source Code Editor Macros
+13. CA-Clipper Tools Notes
+14. International Notes
+15. Supported Operating Systems
+
+
+1. INSTALLATION INSTRUCTIONS
+============================
+There are several important pieces of information that you must be aware of
+before installing CA-Clipper 5.3a.
+
+* Please backup your existing CA-Clipper 5.3 files and directory structure
+before running this installation.
+
+* You must install on top of CA-Clipper version 5.3.  This installation will
+not work properly if you attempt to install over any CA-Clipper version other
+than 5.3.
+
+* CA-Clipper 5.3a can be installed only from DOS.
+
+* You must have 8MB free on the hard disk where CA-Clipper 5.3 is installed.
+
+After backing up your existing CA-Clipper 5.3 files and directory structure,
+you may proceed with the installation by executing INSTALL.EXE from the first
+floppy disk, or, if you have downloaded this patch, you must copy the files
+onto two 1.44MB floppy disks before installing.
+
+The installation process will ask you to enter the names of your CA-Clipper
+5.3 directories.  Follow the instructions on the screen to proceed with the
+installation.
+
+After specifying the directories, the installer will then patch your version
+of CA-Clipper 5.3 to CA-Clipper 5.3a.
+
+After the patch process has completed, please examine the PATCH.LOG file in
+the root of your CA-Clipper 5.3a directory to view the results of the patch.
+
+
+2. CA-CLIPPER 5.3A FILES
+========================
+The file sizes and directory structure of all the files in CA-Clipper 5.3a are
+listed below.  Most files have an updated date of May 20, 1996 and a time
+stamp of 5:31a.  The dates and times of the directories will be determined by
+the date and time CA-Clipper 5.3a was installed.  In the directory structure
+listed below, the installation was done on April 24, hence, the directories
+all have a date of April 24 and a time of approximately 10:36a.
+
+Directory of C:\CLIP53
+
+BIN            <DIR>        04-24-96 10:36a
+CACI           <DIR>        04-24-96 10:36a
+INCLUDE        <DIR>        04-24-96 10:36a
+LIB            <DIR>        04-24-96 10:37a
+NG             <DIR>        04-24-96 10:37a
+OBJ            <DIR>        04-24-96 10:37a
+SOURCE         <DIR>        04-24-96 10:37a
+BLINKER  TXT        15,460  06-26-95  5:30a    // Intentionally not updated
+BLINKER  WRI        16,384  05-20-96  5:31a
+CLIP53A  TXT       108,662  05-20-96  5:31a
+LLIBG    TXT        13,183  06-26-95  5:30a    // Intentionally not updated
+OPTEDIT  TXT         8,749  05-20-96  5:31a
+PATCH    LOG        61,296  05-20-96 10:39a    // Created while patching.
+                                               // Size based on results.
+         6 file(s)        223,734 bytes
+
+Directory of C:\CLIP53\BIN
+
+BLINKER  EXE       100,004  05-20-96  5:31a
+BML2RES  COM         8,320  05-20-96  5:31a
+BMLDIR   COM         7,856  05-20-96  5:31a
+CACI     BAT           244  05-20-96  5:31a
+CL       BAT            51  05-20-96  5:31a
+CLD      HLP        19,677  05-20-96  5:31a
+CLDR     EXE        56,225  05-20-96  5:31a
+CLIPPER  EXE       211,539  05-20-96  5:31a
+DBT53    EXE         5,697  05-20-96  5:31a
+DBU      EXE       464,896  05-20-96  5:31a
+DBU      HLP        19,962  05-20-96  5:31a
+DBU      ICO           766  05-20-96  5:31a
+DBU      PIF           967  05-20-96  5:31a
+EXO1     EXE       325,968  05-20-96  5:31a
+EXO2     EXE        91,746  05-20-96  5:31a
+EXOSPACE EXE       305,060  05-20-96  5:31a
+MKDBUICN EXE         5,392  06-26-95  5:30a    // Intentionally not updated
+OPTEDIT  EXE        96,316  05-20-96  5:31a
+PE       EXE       266,240  05-20-96  5:31a
+PMINFO   EXE        93,840  05-20-96  5:31a
+RES2BML  COM         9,088  05-20-96  5:31a
+RL       EXE       411,648  05-20-96  5:31a
+RMAKE    EXE        38,627  05-20-96  5:31a
+RMINFO   EXE        59,926  05-20-96  5:31a
+RO       COM           354  05-20-96  5:31a
+TTF2FNT  EXE        22,016  05-20-96  5:31a
+UNIVESA  EXE        34,032  05-20-96  5:31a
+        27 file(s)      2,655,490 bytes
+
+Directory of C:\CLIP53\CACI
+
+DATA           <DIR>        04-24-96 10:36a
+BLIDUA   TPL         1,327  05-20-96  5:31a
+BLIEXT   TPL         1,271  05-20-96  5:31a
+BLIRMD   TPL         1,275  05-20-96  5:31a
+CACI     EXE     1,062,688  05-20-96  5:31a
+CACI     HLP     3,662,275  05-20-96  5:31a
+CACI$    DAT           734  06-26-95  5:30p    // Intentionally not updated
+CACI_STR DLL        56,656  05-20-96  5:31a
+CACIACT  DLL        54,976  05-20-96  5:31a
+CACIADAM DLL       481,280  05-20-96  5:31a
+CACIATOM DLL        13,824  05-20-96  5:31a
+CACICNTR DLL       177,152  05-20-96  5:31a
+CACICOMP DLL       279,126  05-20-96  5:31a
+CACIDATE DLL        18,624  05-20-96  5:31a
+CACIDED  DLL       142,464  05-20-96  5:31a
+CACIEDIT DLL       204,800  05-20-96  5:31a
+CACIERR  DLL        73,216  05-20-96  5:31a
+CACIFED  DLL        87,680  05-20-96  5:31a
+CACIINT  DLL        24,064  05-20-96  5:31a
+CACILINK DLL       101,888  05-20-96  5:31a
+CACILOAD EXE        16,384  05-20-96  5:31a
+CACILOGW DLL        20,992  05-20-96  5:31a
+CACIMASK DLL        33,232  05-20-96  5:31a
+CACIMED  DLL       157,184  05-20-96  5:31a
+CACIMEM  DLL        42,496  05-20-96  5:31a
+CACINMBR DLL        26,416  05-20-96  5:31a
+CACINT10 DLL        26,624  05-20-96  5:31a
+CACIRDD  DLL        54,272  05-20-96  5:31a
+CACIRDDB DLL       337,365  05-20-96  5:31a
+CACIRIDX EXE        39,424  05-20-96  5:31a
+CACIRT10 DLL       137,994  05-20-96  5:31a
+CACISSYS DLL         9,792  05-20-96  5:31a
+CACISWIN DLL         7,488  05-20-96  5:31a
+CACITBOX DLL        56,976  05-20-96  5:31a
+CACITIME DLL        21,936  05-20-96  5:31a
+CACIWDCI DLL        29,184  05-20-96  5:31a
+CACIWED  DLL       532,992  05-20-96  5:31a
+CACIWED  INI         7,760  05-20-96  5:31a
+CLIPMDLL DLL       215,264  05-20-96  5:31a
+CTL3D    DLL        14,416  05-20-96  5:31a
+DBF      DLL        31,232  05-20-96  5:31a
+DBFNTX   DLL        38,912  05-20-96  5:31a
+EXOSPACE TPL         1,223  05-20-96  5:31a
+LIBRARY  TPL           200  05-20-96  5:31a
+README   WRI        22,272  06-26-95  5:30a    // Intentionally not updated
+REMOVE   EXE         7,376  06-26-95  5:30a    // Intentionally not updated
+RUNAUTO  COM         9,963  05-20-96  5:31a
+TOOLHELP DLL        14,128  05-20-96  5:31a
+        47 file(s)      8,358,817 bytes
+
+Directory of C:\CLIP53\CACI\DATA
+
+AUTOMAKE       <DIR>        04-24-96 10:36a
+CATALOG  VO            418  06-26-95  5:30a    // REPOSITORY FILES
+REPNAME  IND       177,152  06-26-95  5:30a    // These eight
+REPTYPE  IND       187,392  06-26-95  5:30a    // files are intentionally
+SYSTEM_L APP     2,196,336  06-26-95  5:30a    // not updated.
+SYSATOM  VO        179,230  06-26-95  5:30a    // REPOSITORY FILES
+APPTAB   VO            514  06-26-95  5:30a    // These eight
+SYSTEM_L PFX       441,645  06-26-95  5:30a    // files are intentionally
+SYSTEM_L IDX        22,264  06-26-95  5:30a    // not updated.
+DC_UTILS PRG           241  05-20-96  5:31a
+DISKDATA DBF           393  05-20-96  5:31a
+DISKID   NTX         2,048  05-20-96  5:31a
+SALES    DBF           346  05-20-96  5:31a
+SALES    PRG           306  05-20-96  5:31a
+SALESREP NTX         2,048  05-20-96  5:31a
+        14 file(s)      3,210,333 bytes
+
+Directory of C:\CLIP53\CACI\DATA\AUTOMAKE
+
+BACKUP         <DIR>        04-24-96 10:36a
+         0 file(s)              0 bytes
+
+Directory of C:\CLIP53\CACI\DATA\AUTOMAKE\BACKUP
+
+README   TXT            40  05-20-96  5:31a
+         1 file(s)             40 bytes
+
+Directory of C:\CLIP53\INCLUDE
+
+ACHOICE  CH            953  05-20-96  5:31a
+ASSERT   CH          2,142  05-20-96  5:31a
+BLOB     CH          2,959  05-20-96  5:31a
+BOX      CH            907  05-20-96  5:31a
+BROWSYS  CH          2,752  05-20-96  5:31a
+BUTTON   CH          2,307  05-20-96  5:31a
+CLIPDEFS H           1,767  05-20-96  5:31a
+COLOR    CH            389  05-20-96  5:31a
+COMMON   CH          1,230  05-20-96  5:31a
+DBEDIT   CH            748  05-20-96  5:31a
+DBINFO   CH          3,906  05-20-96  5:31a
+DBSTRUCT CH            370  05-20-96  5:31a
+DIRECTRY CH            412  05-20-96  5:31a
+ERROR    API         2,355  05-20-96  5:31a
+ERROR    CH          1,409  05-20-96  5:31a
+EXOSPACE API         1,016  05-20-96  5:31a
+EXTASM   INC         1,233  05-20-96  5:31a
+EXTEND   API         3,280  05-20-96  5:31a
+EXTEND   H             238  05-20-96  5:31a
+EXTENDA  INC        15,847  05-20-96  5:31a
+EXTENDA  MAC         4,161  05-20-96  5:31a
+FILEIO   CH          1,624  05-20-96  5:31a
+FILESYS  API         3,415  05-20-96  5:31a
+FM       API           959  05-20-96  5:31a
+FORM     CH            408  05-20-96  5:31a
+GETEXIT  CH            649  05-20-96  5:31a
+GT       API         3,096  05-20-96  5:31a
+INKEY    CH          9,349  05-20-96  5:31a
+ITEM     API         1,991  05-20-96  5:31a
+LLIBG    API        24,565  05-20-96  5:31a
+LLIBG    CH          6,067  05-20-96  5:31a
+MEMOEDIT CH          1,073  05-20-96  5:31a
+MEMOSYS  CH            441  05-20-96  5:31a
+ORD      CH          9,752  05-20-96  5:31a
+RDD      API        43,287  05-20-96  5:31a
+RDDSYS   CH            342  05-20-96  5:31a
+RESERVED CH         20,036  05-20-96  5:31a
+SET      CH          1,739  05-20-96  5:31a
+SETCURS  CH            534  05-20-96  5:31a
+SIMPLEIO CH            800  05-20-96  5:31a
+STD      CH         66,296  05-20-96  5:31a
+TBROWSE  CH            660  05-20-96  5:31a
+VM       API         1,312  05-20-96  5:31a
+        43 file(s)        248,777 bytes
+
+Directory of C:\CLIP53\LIB
+
+_DBFCDX  LIB       136,979  05-20-96  5:31a
+ANSITERM LIB        12,833  05-20-96  5:31a
+C53BLMAX LNK         4,904  05-20-96  5:31a
+C53BLMID LNK         4,012  05-20-96  5:31a
+CLD      LIB       112,545  05-20-96  5:31a
+CLDR     LIB       134,059  05-20-96  5:31a
+CLIPPER  BML       772,500  05-20-96  5:31a
+CLIPPER  LIB       693,249  05-20-96  5:31a
+DBFBLOB  LIB        91,337  05-20-96  5:31a
+DBFCDX   LIB       102,609  05-20-96  5:31a
+DBFMDX   LIB        81,493  05-20-96  5:31a
+DBFMEMO  LIB       103,121  05-20-96  5:31a
+DBFNDX   LIB        26,151  05-20-96  5:31a
+DBFNTX   LIB        38,465  05-20-96  5:31a
+EXOSPACE LIB        79,175  05-20-96  5:31a
+EXTEND   LIB       140,233  05-20-96  5:31a
+LLIBG    LIB       150,885  05-20-96  5:31a
+NOVTERM  LIB        14,881  05-20-96  5:31a
+PCBIOS   LIB        15,393  05-20-96  5:31a
+SAMPLES  LIB        54,403  05-20-96  5:31a
+TERMINAL LIB        14,881  05-20-96  5:31a
+        21 file(s)      2,784,108 bytes
+
+Directory of C:\CLIP53\NG
+
+C53G01C  NG      1,464,666  05-20-96  5:31a
+C53G02C  NG        295,285  05-20-96  5:31a
+C53G03C  NG        468,797  05-20-96  5:31a
+C53G04C  NG         55,268  05-20-96  5:31a
+NG       EXE        38,160  05-20-96  5:31a
+         5 file(s)      2,322,176 bytes
+
+Directory of C:\CLIP53\OBJ
+
+_MDXSYS  OBJ           810  05-20-96  5:31a
+CDXLOCK  OBJ         4,125  05-20-96  5:31a
+CTUS     OBJ        26,656  06-26-95  5:30a    // Intentionally not updated
+GT       OBJ         9,754  05-20-96  5:31a
+NTXLOCK2 OBJ           280  05-20-96  5:31a
+NULSYS   OBJ           726  05-20-96  5:31a
+MDXDUT   OBJ         8,149  05-20-96  5:31a
+MDXFRE   OBJ         8,150  05-20-96  5:31a
+MDXGER   OBJ         8,159  05-20-96  5:31a
+MDXITA   OBJ         8,151  05-20-96  5:31a
+MDXSPA   OBJ         8,151  05-20-96  5:31a
+MDXSWE   OBJ         8,151  05-20-96  5:31a
+MDXUK    OBJ         8,151  05-20-96  5:31a
+MDXUSA   OBJ         8,147  05-20-96  5:31a
+MSGDAN   OBJ         3,076  05-20-96  5:31a
+MSGDUT   OBJ         3,177  05-20-96  5:31a
+MSGFIN   OBJ         3,147  05-20-96  5:31a
+MSGFRE   OBJ         3,603  05-20-96  5:31a
+MSGGER   OBJ         3,496  05-20-96  5:31a
+MSGGR437 OBJ         3,104  05-20-96  5:31a
+MSGGR851 OBJ         3,106  05-20-96  5:31a
+MSGIC850 OBJ         3,116  05-20-96  5:31a
+MSGIC861 OBJ         3,116  05-20-96  5:31a
+MSGITA   OBJ         3,077  05-20-96  5:31a
+MSGNOR   OBJ         3,077  05-20-96  5:31a
+MSGPOR   OBJ         3,081  05-20-96  5:31a
+MSGSPA   OBJ         3,406  05-20-96  5:31a
+MSGSWE   OBJ         3,087  05-20-96  5:31a
+MSGUK    OBJ         3,088  05-20-96  5:31a
+NTXDAN   OBJ         3,762  05-20-96  5:31a
+NTXDUT   OBJ         3,761  05-20-96  5:31a
+NTXFIN   OBJ         3,763  05-20-96  5:31a
+NTXFRE   OBJ         3,762  05-20-96  5:31a
+NTXGER   OBJ         3,762  05-20-96  5:31a
+NTXGR437 OBJ         3,764  05-20-96  5:31a
+NTXGR851 OBJ         3,764  05-20-96  5:31a
+NTXIC850 OBJ         3,768  05-20-96  5:31a
+NTXIC861 OBJ         3,768  05-20-96  5:31a
+NTXITA   OBJ         3,763  05-20-96  5:31a
+NTXNOR   OBJ         3,765  05-20-96  5:31a
+NTXPOR   OBJ         3,766  05-20-96  5:31a
+NTXSPA   OBJ         3,763  05-20-96  5:31a
+NTXSWE   OBJ         3,763  05-20-96  5:31a
+NTXUK    OBJ         2,414  05-20-96  5:31a
+        45 file(s)        210,425 bytes
+
+Directory of C:\CLIP53\SOURCE
+
+DBU            <DIR>        04-24-96 10:37a
+RL             <DIR>        04-24-96 10:37a
+PE             <DIR>        04-24-96 10:37a
+SYS            <DIR>        04-24-96 10:37a
+SAMPLE         <DIR>        04-24-96 10:37a
+         0 file(s)              0 bytes
+
+Directory of C:\CLIP53\SOURCE\DBU
+
+DBU      HLP        19,962  05-20-96  5:31a
+DBU      LNK           178  05-20-96  5:31a
+DBU      PRG        22,762  05-20-96  5:31a
+DBU      RMK           968  05-20-96  5:31a
+DBUCOPY  PRG        17,536  05-20-96  5:31a
+DBUEDIT  PRG        25,668  05-20-96  5:31a
+DBUHELP  PRG         3,217  05-20-96  5:31a
+DBUINDX  PRG         5,179  05-20-96  5:31a
+DBUNET   PRG         8,931  05-20-96  5:31a
+DBUSTRU  PRG        26,932  05-20-96  5:31a
+DBUUTIL  PRG        43,827  05-20-96  5:31a
+DBUVIEW  PRG        67,609  05-20-96  5:31a
+        12 file(s)        242,769 bytes
+
+Directory of C:\CLIP53\SOURCE\PE
+
+PE       PRG        12,282  05-20-96  5:31a
+PE       RMK           503  05-20-96  5:31a
+         2 file(s)         12,785 bytes
+
+Directory of C:\CLIP53\SOURCE\RL
+
+RL       RMK           631  05-20-96  5:31a
+RLBACK   PRG        40,489  05-20-96  5:31a
+RLDIALG  PRG        10,626  05-20-96  5:31a
+RLFRONT  PRG        40,165  05-20-96  5:31a
+         4 file(s)         91,911 bytes
+
+Directory of C:\CLIP53\SOURCE\SAMPLE
+
+GDBU           <DIR>        04-24-96 10:38a
+AMPM     PRG           673  05-20-96  5:31a
+ARRAY    CH            665  05-20-96  5:31a
+ARRAY    PRG        10,916  05-20-96  5:31a
+ASRTDEMO PRG         1,567  05-20-96  5:31a
+BOX      PRG         4,193  05-20-96  5:31a
+BROWSE   PRG        11,191  05-20-96  5:31a
+DATE     PRG         5,276  05-20-96  5:31a
+DAYS     PRG           406  05-20-96  5:31a
+DBF      PRG           364  05-20-96  5:31a
+DICT     CH            223  05-20-96  5:31a
+DICT     PRG         6,186  05-20-96  5:31a
+DOT      PRG       111,554  05-20-96  5:31a
+ENVIRON  PRG         5,898  05-20-96  5:31a
+EXAMPLEA ASM         6,803  05-20-96  5:31a
+ELAPTIME PRG           668  05-20-96  5:31a
+FILEDEMO PRG           368  05-20-96  5:31a
+FILEDEMO RMK           368  05-20-96  5:31a
+FILEIO   PRG         9,222  05-20-96  5:31a
+FILEMAN  CH          1,639  05-20-96  5:31a
+FILEMAN  PRG        37,269  05-20-96  5:31a
+FKLABEL  PRG           367  05-20-96  5:31a
+FKMAX    PRG           369  05-20-96  5:31a
+GAUGDEMO PRG         1,239  05-20-96  5:31a
+GAUGE    PRG         4,102  05-20-96  5:31a
+ITERATOR PRG         1,545  05-20-96  5:31a
+KEYBOARD PRG           633  05-20-96  5:31a
+LENNUM   PRG           318  05-20-96  5:31a
+LISTBOX  PRG         1,892  05-20-96  5:31a
+LOCKS    PRG         4,069  05-20-96  5:31a
+LOCKS87  CH            923  05-20-96  5:31a
+MENU     PRG         6,375  05-20-96  5:31a
+MOD      PRG         2,577  05-20-96  5:31a
+NUM      PRG         8,034  05-20-96  5:31a
+PRINT    PRG         1,112  05-20-96  5:31a
+READKEY  PRG         2,361  05-20-96  5:31a
+SCROLBAR PRG         3,402  05-20-96  5:31a
+SECS     PRG           561  05-20-96  5:31a
+SOUNDEX  C           3,704  05-20-96  5:31a
+STACK    PRG         3,812  05-20-96  5:31a
+STATUS   PRG         1,625  05-20-96  5:31a
+STRING   PRG         2,288  05-20-96  5:31a
+STRZERO  PRG           986  05-20-96  5:31a
+STUFF    C           3,141  05-20-96  5:31a
+TBDEMO   PRG        12,376  05-20-96  5:31a
+TEMPLATE ASM           826  05-20-96  5:31a
+TIME     PRG         2,034  05-20-96  5:31a
+TIME87   CH          1,161  05-20-96  5:31a
+TSTRING  PRG           556  05-20-96  5:31a
+VALEDIT  PRG         3,628  05-20-96  5:31a
+        49 file(s)        291,465 bytes
+
+Directory of C:\CLIP53\SOURCE\SAMPLE\GDBU
+
+BFILTER  PRG         6,110  05-20-96  5:31a
+COPYBOX  PRG         7,781  05-20-96  5:31a
+COPYFS   PRG         2,515  05-20-96  5:31a
+CREATE   PRG         4,860  05-20-96  5:31a
+DBUMEMO  PRG         1,665  05-20-96  5:31a
+DBUMENU  PRG        13,271  05-20-96  5:31a
+DBUSTRU  PRG        17,044  05-20-96  5:31a
+DBVIEW   PRG        12,475  05-20-96  5:31a
+DIALOG   PRG         6,899  05-20-96  5:31a
+FORMVIEW PRG        10,025  05-20-96  5:31a
+GDBU     BML        49,320  05-20-96  5:31a
+GDBU     LNK           255  05-20-96  5:31a
+GDBU     RMK           826  05-20-96  5:31a
+GETSYS   PRG        43,440  05-20-96  5:31a
+MSGBOX   PRG         6,347  05-20-96  5:31a
+REPX     PRG         5,988  05-20-96  5:31a
+TBREAD   PRG         3,997  05-20-96  5:31a
+UTIL     PRG         4,827  05-20-96  5:31a
+        18 file(s)        197,645 bytes
+
+Directory of C:\CLIP53\SOURCE\SYS
+
+BROWSYS  PRG        22,376  05-20-96  5:31a
+ERRORSYS PRG         3,096  05-20-96  5:31a
+FRMBACK  PRG        17,719  05-20-96  5:31a
+FRMRUN   PRG        28,808  05-20-96  5:31a
+FRMDEF   CH          2,331  05-20-96  5:31a
+GETSYS   PRG        42,720  05-20-96  5:31a
+LBLBACK  PRG         6,039  05-20-96  5:31a
+LBLRUN   PRG         7,554  05-20-96  5:31a
+LBLDEF   CH          1,074  05-20-96  5:31a
+MENUSYS  PRG        21,643  05-20-96  5:31a
+MEMOSYS  PRG         2,996  05-20-96  5:31a
+NTXERR   PRG         1,262  05-20-96  5:31a
+RDDSYS   PRG           640  05-20-96  5:31a
+        13 file(s)        158,258 bytes
+
+Total files listed:
+       268 file(s)     21,035,389 bytes
+
+
+3. WHAT'S FIXED IN CA-CLIPPER 5.3A
+==================================
+Below is a list of fixes for CA-Clipper version 5.3a.
+
+Category      Description of Fixed Problem
+--------      ----------------------------
+Append        A DBF with two character fields, one being blank, will now
+	      append properly.
+
+	      APPEND FROM will no longer lock the last record after appending
+	      multiple records.
+
+Arrays        ACOPY() with invalid 3rd parameter no longer copies elements
+	      to the wrong index of the target array.
+
+	      ASIZE() now generates an error when the first parameter is
+              invalid.
+
+Blob          Passing an invalid data type to BlobDirectImport() now returns
+              a runtime error.
+
+	      The third parameter of BlobExport() is now required.
+
+	      No longer receive a 'lock required' message when attempting to
+	      write data to the root.
+
+	      If the root pointer (BLOBROOTGET()) was a large array, it could
+              be retrieved improperly, causing invalid data to be shown in
+	      the array.
+
+	      VALTYPE() will now return the correct value for memo fields.
+
+CDX           Float field type can now be created.
+
+	      Copying to a FoxPro database with an associated .FPT file will
+              create a valid copy.
+
+	      Production index flag will no longer be overwritten.  This
+              allows FoxPro to read this file properly.
+
+	      APPEND FROM will no longer lock the last record after appending
+	      multiple records.
+
+Checkboxes    Caption will now change color properly when focus is set to
+	      the checkbox.
+
+Code Blocks   EVAL() of a code block with a function name that begins with
+              IF...() will no longer fail to execute.
+
+Command Line  If a command line parameter ends with a "\", it no longer gets
+              dropped.
+
+Compiler      CASE statement no longer incorrectly handling "==".
+
+DBInfo        DBINFO( DBI_FULLPATH ) will no longer return NIL.
+
+	      DBINFO( DBI_DBFILTER ) with no filter will no longer cause a VM
+              Integrity error.
+
+DBU           DBU will no longer fail to display relations.
+
+DOS Debugger  A variable containing all spaces will no longer be shown
+              improperly using Monitor.
+
+	      Watchpoint on private parameter no longer shows an erroneous
+              value.
+
+	      After debugging a large application (like DBU), CLD will no
+              longer lock with an Alert box on the screen.
+
+	      /D command line parameter will no longer fail to be recognized.
+
+	      GPF will no longer occur under Windows 95.
+
+Error System  No longer receive DOS error 51 when a normal access denied
+              error should be returned.
+
+Extend System _parinfo() with a codeblock will no longer return 0.
+
+Fields        FIELDBLOCK() will now return NIL if not in the present workarea.
+
+	      FIELDWBLOCK() will now return NIL if not in the present
+              workarea.
+
+Get System    Using a valid with a codeblock will no longer return an
+              incorrect value.
+
+	      Captions will no longer cause lost memory.
+
+	      Valid clause will no longer fail to be executed when the mouse
+              is clicked on another GET field.
+
+	      In graphics mode, only one cursor will appear in GETs when
+              clicking with the mouse.
+
+	      TBReader() and GUIReader() now contain the correct number of
+              parameters as is listed in STD.CH.
+
+	      Kill read will now exit if focus is on a TBrowse.
+
+	      Creating a single file-wide STATIC Get System reduces the
+	      overall number of STATIC variables used so that more will be
+	      available within applications.  ShowGetMsg() and EraseGetMsg()
+	      were created to move message display handling out of ReadModal()
+	      for easier and cleaner messaging control. Separating the 
+	      assignments for message colors and coordinates permits more
+	      precision, and appropriate handling of streamlining code for
+	      text versus graphics mode. The changes cause Get System
+	      declarations and runtime activity to take up less DGROUP,
+	      less memory, and public access to the Get System values.
+
+	      Corrected a single WHEN clause RETURNing .F. causing infinite
+	      looping.
+
+	      Fixed @..GET..LISTBOX anomaly caused when the GET nVar == 0.
+
+	      Corrected GetSys.Prg code that inappropriately caused Mouse
+	      activation if the mouse was turned off.
+
+	      _GetNumcolor() function always returns 0 if the Alpha Color
+	      uses an "*" (ASTERISK) suffix. Corrected bright background
+	      color interpretation since blinking is not permitted in
+	      graphics mode.
+
+	      Corrected GUIPreValidate() to receive oGet and oGet:Control.
+
+	      Changed <row> to row in:
+		ATail(GetList):CapRow := ATail(GetList):row
+		to cure an incrementation problem with: @ r++, c.
+
+	      Changed <col> to col in:
+		ATail(GetList):CapCol := ATail(GetList):col - ; 
+		__CapLength( <(caption)> ) - 1
+		to cure an incrementation problem with: @ r, c++.
+
+	      Corrected checking and assigning nMsgRight and nMsgLeft in
+	      Gframe() for NIL or another message string, depending on
+	      the Menu Item Object and if the READ was passed a MSG and/or
+	      a MSG COLOR.
+
+	      Corrected Accelerator() code testing for "&".
+
+	      Corrected updating the message associated with the selected
+	      Get Object.
+
+	      Corrected not leaving the last Get Object's message on the
+	      screen if the Get Object selected has NO message associated
+	      with it.
+
+	      Fixed instance of a status bar displayed with the wrong color
+	      with a NIL message in ReadModal().
+
+	      Corrected message colors with separate _GetNumColor() calls
+	      and assigns.
+
+	      Fixed message coordinate calculations.
+
+	      Corrected code for IsGraphics() message box color and pixel
+	      coordinates.
+
+Graphics Mode Setting a mouse boundary no longer allows MROW() and MCOL()
+              to give values outside of the boundary.
+
+	      Text of the buttons on an ALERT() box is now correctly
+              displayed.
+
+	      Fonts of size greater than 40 points will no longer be displayed
+              incorrectly.
+
+IDE:Appl.     Selecting a filter with no resulting applications will no longer
+    Browser   result in the toolbars being highlighted improperly.
+
+	      Screen refresh problem no longer occurs when resizing the
+              application browser window.
+
+	      Right click will no longer produce a popup menu unless the click
+              occurs on an application button.
+
+	      Rename now contains a before and after name.
+
+	      Application buttons will no longer be cut off and scrolled
+              incorrectly when the application browser is resized.
+
+IDE:Build     Screen refresh problem no longer occurs when building.
+
+	      When all modules are deleted, the IDE will no longer allow a
+              build to take place.
+
+IDE:DBServer  File menu and compiler options descriptions will no longer
+              display incorrect text in the status bar.
+
+	      Opening a CDX file with an associated FPT memo file will no
+              longer give an error.
+
+	      Creating a DBServer with a name different than the DBF will no
+              longer generate code in the form editor using the wrong name.
+
+	      Clicking on the up and down arrows in the list of fields now
+              refreshes the screen properly.
+
+	      Application/Force Build status bar message is now correct.
+
+	      The Stop menu's status bar message from the debug menu is now
+              correct.
+
+	      After opening a DBF, the DBServer now displays the find button.
+
+	      Changing the field name of a field and then choosing auto-layout
+              in the form editor will no longer generate code with the wrong
+              field name.
+
+	      Memo field names will no longer be generated incorrectly when
+	      an auto-layout is performed in the form editor.
+
+IDE:Debugger  View Globals and View Locals window no longer remains open when
+              a debug session is finished.
+
+	      With an active debugging session, starting the debugger from the
+              module browser eight times no longer gives a sharing
+              violation.
+
+	      The breakpoint dialog box can now be closed by the system menu.
+
+	      Adding a watch expression and then closing the watch expression
+              window will no longer not reset the watch expressions when
+              restarting the debugger.
+
+	      SET EVENTMASK is no longer listed as SET MOUSE in the View Sets
+              dialog box.
+
+	      Debugger will no longer fail to receive connection under
+              Windows 95.
+
+IDE:Dialogs   All dialog boxes now have correct hot keys.
+
+IDE:Entity    Screen refresh problem no longer occurs when using the scroll
+    Browser   bars in the entity browser.
+
+	      Button on scroll bar will no longer fail to return to the top
+              after paging down to the bottom.
+
+	      The entity browser is now available from the application
+              browser menu.
+
+	      The toolbar buttons will no longer remain depressed after they
+              are clicked on using the application wide entity browser.
+
+IDE:FieldSpec Double-quotes are no longer illegal in the picture clause field.
+
+	      Status bar descriptions are now correct for all topbar menu
+              items.
+
+	      Text for "Message on status bar" will no longer fail to print
+              when the File/Print command is issued.
+
+	      The 'required' property is no longer limited to 9 characters
+              (international issue).
+
+IDE:Form      Single line edits will no longer ignore the status bar messages
+    Editor    from the DBServer that is used.
+
+	      Two copies of the same form will no longer appear in the binary
+              objects module when starting the form editor twice in
+              succession.
+
+	      The generated code will no longer refresh the screen three times
+              upon startup.
+
+	      Radiogroups will now be able to be moved in all situations.
+
+	      A warning is now given if you are about to overwrite a modified
+              source file.
+
+	      After creating a new form and assigning a PRG name to it, that
+              PRG name will now be retained in the form properties window.
+
+	      Changing the PRG name of a form in the form properties box will
+              no longer cause a ".PRG" to be appended to the #defines in the
+              generated .CH file.
+
+	      The generated code for the frame of a form will no longer place
+              the form one character too far to the left.
+
+	      Default values for a listbox object will no longer appear
+              "1,2,3."  Instead, they will appear "Choice 1, Choice 2, Choice
+              3."
+
+	      "<None>" is no longer a hard-coded string. (International issue)
+
+	      Master/Detail forms will now generate the proper calls to
+              DBUSEAREA().
+
+	      OEM font is now used in the form editor so that the form design
+              will look as identical as possible to the code when it is
+              generated and run.
+
+	      A vertical line consisting of two spaces will now generate the
+	      proper code.
+
+	      The generated code for the frame of a form no longer places the
+	      form one character too far to the left.
+
+	      The additional field properties window now uses an OEM font so
+              that the code that the form editor generates will now simulate
+              how the code looks when it is run in DOS.
+
+IDE:General   CA-Clipper and CA-Visual Objects can now be run concurrently.
+
+	      Splash screen no longer contains hardcoded 'Version 5.3.'
+              (International issue)
+
+IDE:Help      Help links in the application browser have been corrected.
+
+	      Help links in the module browser have been corrected.
+
+IDE:Int'l     All strings now use osprintf().
+
+	      IDS_NEWAPPNAMETEMPLATE can now contain accents.
+
+	      If the property box titles are made longer, they will no longer
+              be truncated to the length of the English version.
+
+	      OEM to ANSI conversion is now done when writing to the batch
+              files for a build.
+
+	      Dates created in the source code editor will no longer use
+              American format, instead it will read the format from the
+	      Windows system files.
+
+	      Resource text and text taken from the INI files are now
+	      converted from ANSI to OEM where appropriate.
+
+	      Keys are now translated properly in the form and menu
+	      editors when using an international keyboard driver.
+
+IDE:LEDs      Blue LEDs will now be properly propagated all the way up to
+              the application browser.
+
+	      Short application names no longer cause bad placement of the
+              LEDs.
+
+	      After clicking OK on the compiler options box, the application
+              LED no longer remains green.
+
+IDE:Linker    Using a low resolution, some text in the linker options dialog
+    Options   box no longer gets cut off.
+
+IDE:Menu      Menu Item Properties window now has hot keys assigned to it.
+    Editor
+	      The module compiler options menu item is no longer available
+              from the menu editor.
+
+	      The scroll bar now appears as needed in the properties
+              window.
+
+	      White can now be selected for the border background color.
+
+	      Saving a popup menu name with a double-byte character title will
+              no longer cause a GPF. (International issue)
+
+	      No longer allowed to create two menus with the same name.
+
+	      OEM font is now used in the menu editor so that the menu design
+              will look as identical as possible to the code when it is
+              generated and run.
+
+IDE:Menu      The status bar descriptions for the File/Setup/System Options of
+    Items     the DBServer Editor are now consistent.
+
+	      In the Field Spec Editor, the File, Edit, Application, Debug,
+              and Window now display the correct text in the status bar.
+
+	      The Form Editor/File/Defaults menu item now contains a hot key.
+
+	      The Form Editor/Edit/Auto Arrange menu item now contains a hot
+              key.
+
+	      In the module browser, if an application is changed so that its
+              LED changes from Green to Yellow, the Debug/Run and Execute
+              toolbar items are now grayed.
+
+	      With an empty repository, several menu and toolbar items are no
+              longer available.
+
+	      After terminating a debug session and leaving the debug window
+              open, the execute toolbar button in the application browser, now
+              functions properly.
+
+	      Hot key for View Sets has been activated.
+
+IDE:Module    With eight modules in the module browser, resizing the window
+    Browser   will no longer cause a refresh problem.
+
+IDE:Printing  Printing the application list will no longer print an
+	      application named "System Library."
+
+IDE:Setup     The accelerator keys in the System Options dialog box are now
+	      consistent.
+
+	      OEM to ANSI checkbox is now in the proper TAB sequence.
+
+IDE:Source    The Undo button now works properly after Clear Editor is
+    Editor    selected.
+
+	      The Clear Editor command will no longer fail to refresh the
+	      status bar.
+
+	      After typing several lines of code, hitting Undo until all the
+              text is gone, now allows additional text to be entered.
+
+	      A TextBlock statement that covers only one line will no longer
+              produce zero entities for the module.
+
+	      Comments are no longer parsed improperly and now correctly
+              report the correct number of entities.
+
+	      Printing two or more pages no longer skips characters.
+
+	      Underscores will no longer be shown in the source code editor
+	      where characters from the upper character set exist.
+
+Indexing      Large indexes will no longer give an assertion error or machine
+              lock in real mode.
+
+	      DBSEEK() no longer ignores the LAST parameter.
+
+	      An internal error no longer results from an eval code block
+	      not returning a logical value.  A runtime error is now returned
+	      instead.
+
+Inkey         Double-byte character sets no longer ignore the second byte.
+              (International issue)
+
+Item API      If the item contains a double value, GetNL now converts the
+              double into a long.
+
+Join          Using the FIELDS clause of the JOIN command, fields will no
+              longer always be taken from the first DBF whether or not aliases
+              are used in the FIELDS clause.
+
+Listboxes     The second parameter for the items of the listbox no longer
+	      requires a character type only.
+
+	      The DelItem() method no longer unintentionally deletes the last
+	      item in the listbox.
+
+	      Attempting to insert an item before the last item of the listbox
+	      will now result in the item being inserted correctly.
+
+	      The Display() method of the Listbox class will no longer be
+	      called twice.
+
+Math          ? VAL("-.1234") now is correctly evaluated.
+
+MDX           Using SET INDEX TO or ORDLISTADD now properly sets the
+	      controlling index.
+
+MemoEdit      Top, left, bottom, and right parameters of MemoEdit() are now
+	      defaulted to the proper values.
+
+Menus         TopBar's HitTest() method now returns the correct value for the
+	      entire bar.
+
+	      Message bar text is now cleared properly when SetColor() is
+	      used.
+
+	      TopBar menus are now displayed properly when ReadModal() is used.
+
+	      Keyboard and mouse input into the menu system no longer behave
+	      differently.
+
+	      MENU TO will no longer fail to release the GET variable.
+
+	      Corrected instances when an accelerator key permitted selection
+	      of a disabled item, to test for MenuItem:Enabled().
+
+	      PopUp class display of popup menus on the wrong line. Was
+	      occurring when Topbar menus had many options and the last
+	      option was near the end of the line. Instead of displaying
+	      the popup menu on the next row down it would be displayed two
+	      rows down. Fixed.
+
+	      IsShortCut() corrected to prevent execution of
+	      MenuItemObject:Data if the object is disabled when an active
+	      MenuItemObject:shortcut key is pressed.
+
+	      Fixed single or Parent PopUp Menu not display()ed at stated
+	      coordinates.
+
+	      Corrected MenuSys.Prg code that inappropriately caused Mouse
+	      activation if the mouse was already turned off.
+
+	      Corrected checking and assigning nMsgRight and nMsgLeft in
+	      Gframe() for NIL or another message string, depending on the
+	      Menu Item Object and if it was received as a MSG and/or a MSG
+	      COLOR parameter from a READ.
+
+	      Fixed instance of a status bar displayed with the wrong color
+	      with a NIL message in ReadModal().
+
+	      Corrected message colors with separate _GetNumColor() calls
+	      and assigns.
+
+	      Fixed message coordinate calculations in text mode.
+
+	      Corrected code for IsGraphics() message box color and pixel
+	      coordinates.
+
+Mouse         The mouse is now working properly with the MENU TO command.
+
+	      MRESTSTATE() now resets the boundary range set by MSETBOUNDS().
+
+	      MSETBOUNDS() no longer doubles the top and bottom boundaries.
+
+	      MSETCURSOR() with no arguments will no longer display the
+	      cursor.
+
+	      MUPDATE() function is now included in LLIBG.LIB.
+
+	      ALERT() and TBrowse:ForceStable() no longer activate the mouse.
+
+	      Mouse row from MSHOW() will no longer put the cursor at nRow*2
+	      when in text mode.
+
+ORD Functions ORDKEYGOTO() now correctly returns a logical value and places
+	      the pointer at the correct record.
+
+Picture       When using 99.99 as a picture clause, the digit to the immediate
+Clause	      right of the decimal point can now be deleted.
+
+PushButtons   When using the & symbol in the caption, there is no longer a
+	      black line in the pushbutton when it doesn't have focus.
+
+	      Changing the STYLE of a pushbutton and using a WHEN clause now
+	      correctly refreshes the pushbutton when the pushbutton is
+	      selected.
+
+Read          READVAR is now set to '' after a MENU TO command.
+
+Samples       In MENU.PRG, Ctrl+S is no longer used.
+
+ScrollBar     If Scrollbar:Total is set to some number other than the default,
+	      assigning Scrollbar:Current to a different value now updates the
+	      position properly.
+
+	      Data can now be saved into cargo.
+
+	      Scrollbars no longer move slightly when using LLIBG.LIB.
+
+	      sBlocks are now executed properly.
+
+	      The scrollbar thumbwheel will no longer be calculated
+	      incorrectly.
+
+Sets          SET TYPEAHEAD TO 0 with INKEY(0) no longer causes the system to
+	      hang.
+
+	      Argument error with SET( _SET_DATEFORMAT, "mmddyy" ) no longer
+	      occurs.
+
+	      SET SCOPE is now defined consistently in ORD.CH and STD.CH.
+
+Sort          Sorting on an aliased field now sorts properly.
+
+TBrowse       An assertion failure no longer occurs using a specific
+	      combination of valids and codeblocks.
+
+	      In graphics mode, if MSG AT clause is specified on a READ
+	      command, but no message is supplied with the GET TBROWSE, 1111
+	      error will no longer occur.
+
+
+4. OTHER CA-CLIPPER PATCHES
+===========================
+Since the release of CA-Clipper 5.3, several patches for CA-Clipper and
+Comix/FlexFile have been released.  All of those patches have been
+incorporated into CA-Clipper 5.3a.
+
+These patches are the following:
+
+* OPT_53.EXE - Includes OPTEDIT.EXE which provides a fix for Internal Error
+8002.
+
+* CLFLEX1D.ZIP - Contains fixes for Comix and FlexFile libraries.
+
+* CL53UP.ZIP - Contains indexing fix by using SORTOF.OBJ.
+
+Please note that the use of SORTOF.OBJ is not necessary in version 5.3a.  This
+fix has been incorporated into CLIPPER.LIB.
+
+
+5. ABOUT THE NEW STUFF IN CA-CLIPPER 5.3
+========================================
+Comix and FlexFile
+Comix is simply another Replaceable Data Driver that can be used with
+CA-Clipper.  It has several advantages over the alternate RDDs that are
+supplied.  These advantages include:
+
+1. The index files that are created are very small.
+2. The index files are very fast.
+3. File handles and coding can be saved by storing a host of index files into
+one DOS file.
+
+In order to use the Comix (or CDX) driver, you can add the following two lines
+of code to your existing applications:
+
+REQUEST DBFCDX
+RDDSETDEFAULT("DBFCDX")
+
+When building, you need to add 2 libraries: DBFCDX and _DBFCDX.  (Both
+libraries are required to keep compatibility with CA-Visual Objects.)
+
+
+Compound Indexes
+The CDX driver creates compound indexes.  A compound index is simply one index
+file which contains multiple indexes.  Each index file is capable of holding
+one or more actual indexes.
+
+An example will help clarify this point:
+
+USE MyDBF
+INDEX ON LastName TO Last
+INDEX ON FirstName TO First
+
+If you use the NTX driver with the above code, two index files will be
+created: FIRST.NTX and LAST.NTX.  If you are using the CDX driver, two index
+files will be created: FIRST.CDX and LAST.CDX.  However, a slight change of
+coding saves one file:
+
+USE MyDBF
+INDEX ON LastName TAG Last TO Both
+INDEX ON FirstName TAG First TO Both
+
+This code will create one single index file: BOTH.CDX.  This CDX file contains
+two indexes (or tags): FIRST and LAST.  Later, if you want to use this index,
+simply:
+
+USE MyDBF
+SET INDEX TO Both
+
+
+Structural or Production Indexes
+A structural, or production, index is an index file which is automatically
+opened when its database is USEd.  A production index file has the same file
+name (with a different extension, of course) and resides in the same directory
+as the DBF.  There are a couple advantages to using production indexes:
+
+1. When the database is put in USE, all of the indexes are automatically
+brought into USE.
+2. The production index remains open (even when a SET INDEX or INDEX ON
+command is issued).
+
+For example,
+
+USE MyDBF
+INDEX ON LastName TAG Last
+INDEX ON FirstName TAG First
+
+If no index file is specified (we only gave a tag name), the CDX driver will
+assume that you want the indexes placed in the structural index.  A file
+called MYDBF.CDX will be created which contains the two TAGs, LAST and FIRST.
+
+Now, when you use this data file like this:
+
+USE MyDBF
+
+The two index tags are already opened automatically.
+
+? ORDNAME(1) 		// Returns "LastName"
+? ORDNAME(2)		// Returns "FirstName"
+
+You can shut off this behavior by using the SET AUTOPEN command.
+
+
+Comix Functions
+Any users of Comix with 5.2 will know that all of the Comix functions began
+with the letters cm...().  For 5.3, these all have been renamed to begin with
+ord...().  Please note that to use these functions, you must include ORD.CH as
+a header file in your source code.  Please take a look at the CA-Clipper
+Reference Guide for a list of these functions.
+
+While using the CDX driver, there are some SET commands that can be used to
+alter the behavior of the driver.  These are listed below and are defined in
+ORD.CH:
+
+SET AUTOPEN 	Sets/Gets automatic open mode.  When a production index is
+                attached to a data file, when that data file is USEd, the
+                index is open automatically.  Setting AUTOPEN off will not
+                open the production index file.
+
+SET AUTORDER  	Allows control of the master index which is in effect when a
+                production index is used.  Setting the order to 0, orders the
+                database in natural order while setting the order to 1, sets
+                the first index to the active index.
+
+SET AUTOSHARE   Autoshare allows the CDX driver to automatically open the
+                index in exclusive mode if not running on the network and in
+                SHARED mode if running on a network.
+
+SET MBLOCKSIZE 	Change the block size for memo files of newly created memo
+SET MEMOBLOCK   files.  You cannot change the block size of existing files.
+
+SET MFILEEXT	Change the extension used for memo fields.
+
+SET OPTIMIZE    Query optimization can be turned off by using the SET OPTIMIZE
+                OFF command.  By default, query optimization is on.
+
+SET STRICTREAD  When creating an index with the CDX driver, _DBFCDX bypasses
+                the standard RDD hierarchy calls which force "read one record
+                at time".  Instead, by default, _DBFCDX reads several records
+                at once (into a big buffer);  this makes index creation up to
+                two times faster.  However, this technique defeats some
+                libraries (such as encryption RDDs) which depend on the
+                strict RDD hierarchy calls being made.  Thus, "strict reads"
+                can be turned on via SET STRICTREAD ON.
+
+
+FlexFile
+The main advantage of using FlexFile is to provide a replacement for
+CA-Clipper's memo fields.  This replacement increases the speed at which data
+is saved and retrieved from a memo field as well as supports variable length
+memo fields.
+
+Using FlexFile (DBFMEMO.LIB), you can store data of any type into a CA-Clipper
+memo field except objects and code blocks.  In addition, the FlexFile memo
+fields are not limited to 64K as are CA-Clipper's.  This allows the storage of
+huge arrays, graphics, word processor files, etc.
+
+For a list of the functions that are used with FlexFile, please see the
+Reference Guide Volume 1.  All of the functions beginning with Blob...() are
+FlexFile functions.
+
+
+Light Lib Graphics
+Prior to version 5.3 of CA-Clipper, the display of CA-Clipper applications was
+limited to the 255 characters that make up the ASCII character set.
+
+Programming in graphics mode is very simple.  For compatibility with previous
+versions of CA-Clipper, text mode is the default video mode.  Switching to
+graphics mode, however, is very simple.  The SET VIDEOMODE command will handle
+this task:
+
+#include  "llibg.ch"   <--Graphics constants are defined in this header file
+SET VIDEOMODE TO LLG_VIDEO_VGA_640_480_16
+
+When the SET VIDEOMODE command is issued, a Clear Screen command is issued.
+This is automatic when changing from a text mode to a graphic mode using Light
+Lib or any other graphics package.  After clearing the screen, the video is
+set to 640 x 480 x 16 colors.  This is the standard VGA video mode and is
+exactly the same video mode that Windows 95 uses as its "Safe mode".  Other
+video modes are supported by Light Lib Graphics but for higher resolutions and
+or more colors, an upgrade must be purchased from DFL Software, the makers of
+Light Lib Graphics.
+
+When compiling your application, be sure that the LLIBG.CH header file can be
+found in your INCLUDE environment variable.  This will insure that all of the
+graphics mode constants are included in your application.  When linking your
+application, the LLIBG.LIB library must be included in your link script.  All
+of the Light Lib support is contained in this one library.  With the addition
+of this one line of code, your application will now run in graphics mode the
+same way it ran in text mode.  There are three major issues of which you must
+be aware when you run in graphics mode.
+
+First, screen coordinates are reversed in graphics mode.  In text mode,
+coordinates are read  "row,column", however, in graphics mode, these same
+coordinates are read  "column,row".  In addition, in text mode, coordinates
+are given in terms of character size.  One character takes up one column and
+one row.  In graphic mode, coordinates are measured in terms of pixels.  The
+standard font that is used is a font which measures 16 pixels high and 8
+pixels wide.  Mapping this out to the standard VGA screen which is 480 pixels
+high and 640 pixels wide, this gives a nice even 80 columns and 30 rows of
+text   Compare this to the normal 80 columns and 25 rows in regular text mode,
+CA-Clipper applications now have five more rows of text with which to play.
+
+The second issue has to do with the SaveScreen() and RestScreen() functions of
+CA-Clipper.  In text mode, when a call to SaveScreen() is issued, CA-Clipper
+makes one character string out of the text that is displayed on the screen and
+saves it.   Even if the entire screen is saved (80 columns and 25 rows), this
+gives a character string of 2,000 characters.  In graphics mode, this is not
+so easy.   Now that we are in pixel coordinates, this same situation causes
+problems.  Even though the screen may be in 80 columns by 30 rows, each
+row/column coordinate cannot be represented by a single character as it can be
+in text mode.  Now, each and every pixel must be saved.  In a 640 x 480 x 16
+color screen using the text mode method, a character string of 19,200
+characters would be needed.  This would be a string that is just too large for
+Clipper to handle quickly.  Imagine the size of a string needed when higher
+resolutions or more colors are used.  (Changing to 256 colors, for example,
+would raise the size of this string to 307,200 characters).  Instead, in the
+LLIBG library, replacements for SaveScreen() and RestScreen() are provided
+which save the screen coordinates in an array instead of a character string.
+The elements of this array are internal to the LLIBG library and cannot be
+manipulated.  Some slight code changes to existing CA-Clipper code may be
+necessary due to this change.
+
+The third major issue when using the Light Lib Graphics library has to do with
+CA-Clipper's General Terminal layer.  The CA-Clipper General Terminal layer
+(or GT layer) contains all of the functions that Clipper uses to display
+information to the screen (or terminal).  For example, when an @ SAY command
+is issued, there is a function called _gtWriteAt() which processes this
+command and actually displays the text to the screen.  When the LLIBG library
+is linked into a CA-Clipper application, the entire GT layer is overwritten.
+All of the _gt..... functions are now handled by the LLIBG library.  This is
+important when using any of the GT functions in C or Assembler code that will
+work with a CA-Clipper application.  The programmer must be aware that there
+may be some slight differences in the way a _gt.... function behaves when
+LLIBG.LIB is linked in and when it is not.
+
+As you might imagine, graphics mode takes up more memory than text mode.  The
+previous example can show you that.   Therefore, it is very unwise to think
+that a graphical application can be run in real-mode.  The very small
+applications can do it, but performance will suffer greatly.  Protected-mode
+is definitely recommended for all graphics applications.
+
+The Light Lib Graphics functions can be found in the CA-Clipper Reference
+Guide Vol. 1.  The Light Lib functions all begin with g...().  Please note
+that blinking text is not supported in graphics mode.
+
+
+The CA-Clipper Mouse System
+Mouse support is built into the CA-Clipper GET system.  You only need to add
+two lines of code to your application to activate the mouse:
+
+  SET EVENTMASK TO INKEY_ALL  <-- constant is defined in inkey.ch
+  MSETCURSOR(.T.)             <-- turns the mouse cursor on
+
+While in text mode, the mouse cursor will appear as a block.  This shape
+cannot be changed.  While in graphics mode, however, there are a number of
+pre-defined mouse shapes that can be used.  Please see the MSTATE() function
+for details.
+
+
+ORDCREATE()
+The OrdCreate() function now requires the <bExpKey> parameter to be passed.
+In previous versions, this parameter was optional, but now it is required.
+
+
+
+6. ABOUT THE NEW STUFF IN CA-CLIPPER 5.3a
+=========================================
+While CA-Clipper 5.3a has mainly been created as a maintenance release, there
+are a few enhancements in the product that we hope you will find useful.
+These enhancements include new macros in the source code editor (please see
+the "CA-Clipper Workbench Source Code Editor Macros" chapter of this document)
+and a new sample application named GDBU.
+
+GDBU is a graphics version of CA-Clipper's DBU.  This sample application has
+been written entirely in CA-Clipper 5.3 and demonstrates the many uses of
+graphics mode.  The source code to this sample application has been included
+in the CLIP53\SOURCE\SAMPLE\GDBU directory.  Feel free to change this source
+code as you wish so that you can experiment with the many features that
+graphics mode has to offer in CA-Clipper.
+
+Depending on your system's memory configuration, GDBU may require some extra
+memory to run properly.  If you are experiencing any problems such as the
+application terminating, please run the OPTEDIT utility on the GDBU.EXE file
+as follows:
+
+    OPTEDIT GDBU.EXE -EXTRAMIN 4096
+
+This will allow the executable to use sufficient memory throughout the
+duration of the application.
+
+
+
+7. DOCUMENTATION UPDATES
+========================
+
+CA-Clipper Error Messages and Appendices Guide
+----------------------------------------------
+Exospace
+Exospace is limited to 64 characters for the length of a path.
+
+Reserved Words
+The following words are reserved by CA-Clipper and should be added to the
+Reserved Word list in the documentation:
+
+  PUBLIC
+  SYSINIT
+  TEXTB - abbreviation for TEXTBLOCK
+
+In addition, please see the file RESERVED.CH in the CLIP53\INCLUDE directory
+for a complete list of the new reserved words for CA-Clipper 5.3.
+
+
+BASE/1022 - ALLTRIM() Argument Error
+Explanation:	A character parameter was not passed to the ALLTRIM()
+                function.
+Action:		Provide a character variable as the parameter to ALLTRIM().
+
+
+BASE/2023 - ASIZE() Argument Error
+Explanation:    The arguments supplied to the ASIZE() function were not of the
+                correct type.
+Action:         Correct the program.
+
+
+DBFNTX/1019 - Workarea not indexed
+Explanation:	The workarea does not have a currently active index.
+Action:		Use DBCREATEINDEX() or the INDEX ON command to create an index
+                for this workarea.
+Note:		This error is the same for DBFCDX, DBFMDX, DBFNDX, and all
+                other RDDs.
+
+
+CA-Clipper Getting Started
+--------------------------
+On page 4-55 of the Getting Started guide, there are two minor errors in the
+source code used in step 4:
+
+1. The line MEMVAR->oInfo == DC_MENUCreate() should be changed to
+	    MEMVAR->oInfo := DC_MENUCreate()
+
+2. The line DO WHILE should be in BOLD.
+
+
+CA-Clipper Programming and Utilities Guide
+------------------------------------------
+Compiler
+The CA-Clipper compiler will not recognize characters above ASCII number 125
+to be used as variable names.
+
+The default number of file handles in a CA-Clipper application is now 255.
+This value can be changed via the SET CLIPPER command.  Please note that
+CA-Clipper can only use as many files as are available in your system's
+CONFIG.SYS.
+
+
+Debugger (CLD)
+There are three debuggers supplied with CA-Clipper 5.3:
+
+1. The CA-Clipper Workbench debugger - To use this debugger, be sure to have
+the device CAWDCI.386 listed in the [386Enh] section of your SYSTEM.INI file
+of Windows.  The CAWDCI.386 file was installed to your Windows System
+directory when you installed CA-Clipper 5.3.  To compile, simply check the
+"Debug Information" checkbox in the compiler options of your application.  In
+the linker options of your application, you must specify "CLD.LIB" as an
+object file.
+
+2. CLDR (Real mode debugger) - There are two separate DOS debuggers packaged
+with CA-Clipper 5.3 -- a real mode debugger and a protected mode debugger.  To
+use the real mode debugger, simply compile your application (with /b of
+course) and then be sure to include CLDR.LIB as a library in your link script.
+You can then debug your application using CLDR.EXE myapp.exe from a DOS
+prompt.
+
+3. CLD (Protected mode debugger) - In order to use the protected mode
+debugger, you must specify the /b parameter on the Clipper command line when
+your application is compiled.  Also, you must include CLD.LIB as an OBJ file
+in your link script.  You can then start your application and debug it by
+running myapp.exe from a DOS prompt.  Please see the information on page 13-9
+of the Programming and Utilities Guide for details on how to start your
+application immediately in the debugger.
+
+There are several switches you can use on the command line as well as a
+CLIPPERDEBUG environment variable.  These are listed in the Programming and
+Utilities Guide pages 13-7 through 13-10.
+
+
+DBU
+The word 'FileName' is a reserved word in DBU.  It should not be used as a
+field name.
+
+
+Exospace
+The command EXOSPACE CLIPPER 501 does not apply to CA-Clipper 5.3.  The
+Exospace version that is supplied with CA-Clipper 5.3 will only work with
+CA-Clipper 5.3 applications.
+
+
+Menu Item Indicators
+On page 8-16 of the Programming and Utilities Guide, it incorrectly states
+that when you define a shortcut key, the key name is displayed to the right of
+the menu item.  While this is true when working in the Menu Editor of the
+CA-Clipper Workbench, it is not the case when programming in straight DOS.
+You must supply the shortcut key as part of the caption for each menu item.
+
+
+CA-Clipper Reference Guide Updates
+----------------------------------
+@..GET TBROWSE
+An ALIAS keyword has been added to this command so that the Database workarea
+may be specified explicitly.
+
+
+ALIAS
+Colons are not permitted as part of an alias name.  Hence, if you use the
+command:
+
+ CREATE C:FRED.DBF FROM GEORGE
+
+An illegal alias of C:FRED will be created.  You must add the ALIAS keyword to
+the above command and supply a legal alias.
+
+When an alias is used, parentheses should surround any function that is
+called.  For example, to call the DBSETORDER() function from the Customer
+alias, the syntax would be as follows:
+
+  CUSTOMER->( DBSETORDER( "FieldName" ) )
+
+
+ALIAS()
+The ALIAS() function returns the specified work area alias in all uppercase.
+
+ALTD()
+The ALTD() function cannot be activated while an ALERT() box is active.
+
+ApplyDefaultColors()
+This function simply applies the colors supplied as parameters to this
+function to the ColorSpec instance variable.
+
+BLOBGET()
+The first parameter, nFieldPos, is zero-based.
+
+BLOBROOTDELETE()
+Removes data from the root area of a BLOB file.
+
+  Syntax
+    BLOBROOTPUT() -> lSuccess
+
+  Arguments
+    None.  (I'd like to have an argument, please)
+
+  Returns
+    BLOBROOTDELETE() returns true (.T.) if successful, otherwise it returns
+    false (.F.)
+
+  Description
+    BLOBROOTDELETE() can be used after a call to BLOBROOTPUT() in order to
+    delete the data that is currently stored in the BLOB file's root area.  By
+    default, this function operates on the currently selected work area.  It
+    can be made to operate on an unselected work area by specifying it with an
+    aliased expression.
+
+COLORSELECT()
+The 4th parameter is used as the hotkey color for all @ GET controls.
+
+DBINFO()
+The following constants are used with the DBINFO() function to specify the
+type of information requested:
+
+ DBI_GETDELIMITER
+ This information is related to the type of RDD used.  This setting always
+ returns NIL.
+
+ DBI_GETSCOPE
+ This setting is not supported and will always return a value of NIL.
+
+ DBI_LOCKOFFSET
+ This setting is not supported and will always return a value of NIL.
+
+ DBI_VALIDBUFFER
+ The DBI_VALIDBUFFER setting of DBINFO() will return .T. after an
+ add/delete/update of a record.  In all other cases, the return value will
+ be .F..
+
+DBORDERINFO()
+The DBOI_KEYGOTO constant is not supported with this function.  Instead, use
+the ORDKEYGOTO() function.  In addition, the constants used with the
+DBORDERINFO() function are now defined in ORD.CH, not DBINFO.CH.
+
+DBRECORDINFO()
+Valid <infotype> values should be listed as:
+ DBRI_DELETED
+ DBRI_LOCKED
+ DBRI_RECNO
+ DBRI_RECSIZE
+ DBRI_UPDATED
+
+DIRECTORY()
+The subarray structure for the return value of DIRECTORY() shows cSize at the
+second position.  The return value in this position of the array is a numeric
+value, not a character value.  Hence, nSize should be used instead.
+
+DIRMAKE()
+The DIRMAKE() function has been renamed to MAKEDIR().
+
+DISPBEGIN()
+The DISPBEGIN() function is ignored when the application is in graphics mode.
+
+DISPEND()
+The DISPEND() function is ignored when the application is in graphics mode.
+
+GBMPDISP()
+The GBMPDISP() function does not support the nTransColor parameter.
+
+Get Class
+There are two additional exported instance variables, CAPROW and CAPCOL.
+CAPROW contains the current row of the Get's caption.
+CAPCOL contains the current column of the Get's caption.
+
+In addition, there is an oGet:Control instance variable which was missing from
+the documentation.  This instance variable simply provides a way to access all
+of a GUI control's instance variables.  Throughout GETSYS.PRG, you will see
+"oGui := oGet:Control" and then oGui can be used to access the instance
+variables of checkboxes, radiobuttons, etc.
+
+The Get System also includes support for status bar messages.  For details,
+please see the MSG clause of the READ command CA-Clipper Reference Guide
+Vol. 2.
+
+GSETEXCL()
+The return value of this function is either NIL or an array of exclusion area
+coordinates.  Please see the discussion in the 'Returns' section on page 2-507
+of the Reference Guide.
+
+GWRITEAT()
+In graphics mode, be sure to turn the mouse cursor off (using MSETCURSOR(.F.))
+before painting text with GWRITEAT() or the @..SAY command in graphics
+mode.  After painting the text, turn the mouse cursor back on by using
+MSETCURSOR(.T.).
+
+Listbox Class
+The Listbox class contains an undocumented (until now) instance variable
+called TextValue.  You can use this instance variable to get the text of the
+currently selected item in the listbox.
+
+The typeOut instance variable is documented incorrectly.  It should read: A 
+value of true (.T.) indicates that the list is empty, while a value of false 
+(.F.) indicates that the list contains selectable items.
+
+The example at the end of the Listbox Class is incorrect.  Instead, 
+the following sample should be used:
+
+local cOldWindow, oList, nChoice, oGet, lList
+local Getlist := {}
+cls
+msetcursor(.T.)            // Use the mouse
+set eventmask to 159       // Recognize mouse clicks
+set videomode to 18        // Use in graphic mode
+
+oGet := GetNew(5,12,{|x| iif(x == NIL, nChoice, ;
+			 nChoice := x ) }, "nChoice" )
+oGet:reader := {| a, b, c, d, e, f| GuiReader(a, b, c, d, e, f) }
+oList := ListBox( 5, 10, 12, 20, .F. )
+oGet:control := oList
+
+cOldWindow := SaveScreen(5, 10, 12, 20)
+
+oList:addItem("Black"  , "N" )
+oList:addItem("Blue"   , "B" )
+oList:addItem("Green"  , "G" )
+oList:addItem("Cyan"   , "BG")
+oList:addItem("Red"    , "R" )
+oList:addItem("Magenta", "RB")
+oList:addItem("Brown"  , "GR")
+oList:addItem("White"  , "W" )
+
+aadd(getlist, oGet)
+readmodal(getlist)
+
+restscreen(5,10,12,20,cOldWindow)
+
+return(nChoice)
+
+
+LLG_VIDEO_TXT
+The LLG_VIDEO_TXT constant is incorrectly spelled as LLG_VIDEO_TEXT in the
+CA-Clipper Reference Guide.  For a list of all LLG constants, please see the
+LLIGB.CH include file in the CLIP53\INCLUDE directory.
+
+MEMOREAD()
+The MEMOREAD() function only searches for a text file in the current
+directory.  It does not search the DOS PATH for the file as is stated in the
+CA-Clipper Reference Guide.
+
+MSETBOUNDS()
+When using the SETMODE() function, the mouse boundaries set by MSETBOUNDS()
+are automatically reset to the entire screen.  After using the SETMODE()
+function, you must call the MSETBOUNDS() function to reset the mouse
+boundaries.
+
+MSTATE()
+In order to reset the number of button clicks, you must pass a parameter of
+true (.t.) to the MSTATE() function.
+
+MUPDATE()
+  Syntax:	MUPDATE() -> NIL
+  Description:	This function is used to refresh the mouse cursor.  Use this
+                function to avoid the flashing of the mouse cursor in your
+                applications.
+
+  Example:	? "Press Alt-C to break this loop"
+			DO WHILE .T.
+			  MUPDATE()
+			ENDDO
+
+ORDCOND()
+The ORDCOND() function is not available in CA-Clipper 5.3.  In its place, use
+the ORDCONDSET() function.
+
+ORDCONDSET()
+In the Reference Guide, only 15 parameters are listed.  The function, in
+reality, takes 16 parameters.  A 12th parameter should be inserted -- its
+value is always NIL.
+
+ORDCREATE()
+Contrary to the documentation, the bExpKey parameter is a required parameter.
+In addition, the reference to the DBPX RDD with reference to production or
+structural indices should be changed to DBFMDX.
+
+ORDNUMBER( <cOrderName> )
+If <cOrderName> is not found, ORDNUMBER() does not raise a recoverable
+runtime error. Instead, ORDNUMBER() will return a value of zero.
+
+PopUpMenu Class
+If oPopUp:Open() is called when oPopUp:IsOpen, it will save the screen region
+again; i.e., it will save itself.  Hence, when oPopUp:Close() is called, the
+menu will still be visible.  To avoid this, you should check oPopUp:IsOpen
+before opening.
+
+The note listed under the open() method of the PopUpMenu class should read
+"This method only has meaning when the pop-up menu is open."
+
+PushButton Class
+ColorSpec - The ColorSpec instance variable for PushButtons must consist of
+either 4 or 5 colors.  The 5th ColorSpec is used as the text color in graphics
+mode only and is ignored in text mode.
+
+RadioGroup Class
+The RadioGroup class contains an undocumented (until now) instance variable
+called TextValue.  You can use this instance variable to get the text of the
+currently selected item in the radiogroup.
+
+REINDEX
+The REINDEX command contains a NOOPTIMIZE clause which, when used with the CDX
+driver, turns optimizations off.
+
+RESTSCREEN()
+In graphics mode, the 5th parameter is an array, not a character string.  In
+text mode, it remains a character string.
+
+SAVESCREEN()
+In graphics mode, the return value of SAVESCREEN() is an array, not a
+character string.  In text mode, it remains a character string.
+
+ScrollBar Class
+The example in the ScrollBar class contains a typo.  It reads
+'oScr := (2, 10, 0)'.  It should read 'oScr := Scroll(2, 10, 0)'.
+
+SEEK
+There is a 2nd keyword, LAST, that can be used with the SEEK command.  The
+full syntax of this command is now:
+
+  SEEK <expSearch> [SOFTSEEK] [LAST]
+
+If LAST is specified, the SEEK will search for the last occurrence of the
+specified key value.  This command is only supported with the DBFCDX driver.
+
+SETCOLOR()
+The 4th parameter is used as the hotkey color for all @ GET controls.
+
+SETMODE()
+When using the SETMODE() function, the mouse boundaries set by MSETBOUNDS()
+are automatically reset to the entire screen.  After using the SETMODE()
+function, you must call the MSETBOUNDS() function to reset the mouse
+boundaries.
+
+TBColumn Class
+The DefColor exported instance variable only accepts the first two
+parameters.  The 3rd and 4th parameters of this array that are listed in the
+documentation are not used.
+
+TBrowse Class
+The return value of the TBrowse Class exported method hitTest() should be
+<nHitStatus> instead of self.
+
+VALTYPE()
+The behavior of VALTYPE( dbfalias->memofield ) will report an "M" for blank
+fields and fields containing character strings.  It will return the actual
+type of the data for all other types (e.g. arrays stored in memo-fields will
+return an "A" from VALTYPE( dbfalias->memofield ) ).
+
+
+
+CA-Clipper Technical Reference Guide Updates
+--------------------------------------------
+LLG_VIDEO_TXT
+The LLG_VIDEO_TXT constant is incorrectly spelled as LLG_VIDEO_TEXT in the
+CA-Clipper Reference Guide.  For a list of all LLG constants, please see the
+LLIGB.CH include file in the CLIP53\INCLUDE directory.
+
+LLIBG.LIB
+In the CA-Clipper Reference Guide and the CA-Clipper Technical Reference
+Guide, the LLIBG.LIB library is shown as being part of the default libraries.
+This library is NOT part of the default libraries and must be added to your
+Exospace link script in order to use graphics mode with CA-Clipper.
+
+
+_mUpdate() method
+
+  Refresh the mouse cursor in graphics mode.
+
+PROTOTYPE
+
+  void _mUpdate( void );
+
+ARGUMENTS
+
+  None.  (I'd like to have an argument, please.)
+
+DESCRIPTION
+
+  This function is used to refresh the mouse cursor.  Use this function to
+  avoid the flashing of the mouse cursor in your applications.
+
+
+_parinfo() method
+
+  There is one additional return value from this function.  If the data type
+passed is a code block, a value of 1024 will be returned.
+
+
+rawLock() method
+
+  Lock and unlock headers, files, and records
+
+PROTOTYPE
+
+  BOOL rawLock(
+                AREAP wa,
+                USHORT action,
+                LONG lRecord
+              )
+
+ARGUMENTS
+
+  wa is a pointer to the workarea.
+
+  action describes the type of lock or unlock to perform and is one of the
+         following values (defined in RDD.API):
+
+      FILE_LOCK      Attempts to lock the file.
+      FILE_UNLOCK    Attempts to unlock the file.
+      REC_LOCK       Attempts to lock record number lRecord.
+      REC_UNLOCK     Attempts to unlock record number lRecord.
+      HEADER_LOCK    Attempts to lock the file header.
+      HEADER_UNLOCK  Attempts to unlock the file header.
+
+  lRecord is the record number to attempt to lock.
+
+DESCRIPTION
+
+  rawLock() attempts to lock or unlock, the header of a DBF, the entire file,
+  or a specific record.  If the lock or unlock was successful, this function
+  returns a value of TRUE, otherwise, it returns FALSE.
+
+FILES
+
+  Header file is RDD.API
+
+
+CA-Clipper Workbench User Guide Updates
+---------------------------------------
+Build
+When performing a build from within the Workbench, CA-Clipper creates several
+batch files in your CACI\AUTOMAKE directory.  It then runs these batch files
+to compile and link your application.  If you are running on a DOS system
+prior to version 7 (Windows 95), there is a limit of 128 characters per line
+for each command in a batch file.  If you have installed CA-Clipper 5.3 to a
+path that is not on the root of a drive, you may run into this limit.  The
+solution to this problem, other than moving CA-Clipper 5.3 to a directory
+right off of the root of your drive, is to use the DOS SUBST command.  This
+command allows you to specify a drive letter for a path.  For example,
+
+  SUBST X: C:\DEV\SOFTWARE\CA\CLIP53
+
+Now, you can use X: to specify all of your paths for your CA-Clipper 5.3
+directory.  Be sure to change your settings in your AUTOEXEC.BAT file as well
+as the settings in CACI.INI if you use the SUBST command.
+
+
+Debugger
+In the CA-Clipper Workbench Debugger, the Evaluate Expression dialog box does
+not support macro expansion.
+
+On page 8-25, the code at the bottom of the page refers to the field name
+'Sales->Sale'.  This should refer to 'Sales->Sales' instead.  Also, on page
+8-29, 'Sales->Sale' should be changed to 'Sales->Sales'.
+
+On page 8-31, the line 'nTotal += Sales->Amount' is actually on line 11 of
+SALES.PRG, not line 13.
+
+
+Entity Browser
+On page 3-37, the pop-up menu that is displayed contains a menu item 'Delete
+entity'.  This option is not available.  You cannot delete an entity from a
+source code module.  Instead, the entire module must be deleted, or you can
+open up the module in the source code editor and then cut the entity.
+
+
+Field Spec Editor
+When using a validation clause, the entered data current value can be
+obtained by using the GetActive():buffer instance variable.
+
+
+Form Editor
+In the form properties window, the PRG Path/File Name must specify an entire
+path, filename, and extension.
+
+The form and menu editors both have been changed to use an OEM font by
+default.  The reasoning behind this is that when you run your CA-Clipper
+applications, the font that is used by DOS is an OEM font.  Hence, the form
+and menu editors will now attempt to simulate as close as possible the look of
+your applications when they are run in DOS.
+
+
+
+Linker Options
+In the linker options dialog box, if the "Use Clipper Tools" checkbox is
+selected, the CA-Clipper Tools protected mode library, CTP.LIB, will
+automatically be included in the link script.  However, the CA-Clipper Tools
+object files, CTUSP.OBJ and CTINTP.OBJ will not be included.  If you wish to
+use these files, you must be aware that conflicts will arise between the
+CA-Clipper Tools object files and the Light Lib Graphics Library.  You may
+not use both the CA-Clipper Tools object files and the Light Lib Graphics
+Library at the same time.  Please note that most of the functionality
+included in CTUSP.OBJ can be duplicated by using functions from the Light Lib
+Graphics Library.
+
+The "Import <Obj> From <Lib>" entry in the linker options dialog box should
+use the following format:
+
+Library1, Object1 ; Library2, Object2, Object3, Object4 ; Library3, Object5
+
+In the above example, Object1 gets pulled from Library1; Object2, Object3, and
+Object4 are pulled from Library2; and Object5 is pulled from Library3.
+
+
+Linker Templates
+A link template provides the CA-Clipper Workbench with information necessary
+to invoke a utility other than Exospace, the default linker.  The link
+template is used, along with application and module information, to construct
+a link batch file and a link script file.  Application and module data are
+available via symbols which may be used in the link template.  Symbols are
+replaced by actual application or module data during the generation of the
+link batch and link script files.
+
+Link template sections
+
+Batch Section
+The batch section of the link template, delimited by template commands
+#batch/#endbatch, controls the generation of a batch file which is executed
+under COMMAND.COM.
+
+Script Section
+Unconditional Script Section(s) - An undelimited set template and script
+commands which are processed unconditionally.
+
+Conditional Script Section(s) - A set of template and script commands,
+delimited by #if/#endif, which are processed conditionally.
+
+Generated Script Section(s) - A set of template and script commands, delimited
+by #gen/#endgen, which permits a list to be expanded into one or more script
+commands.
+
+Template symbols are predefined identifiers used to represent application- and
+module-specific data in the generated batch or script files.  Symbols may
+represent string, string list, numeric or Boolean data.  Although the
+following symbols are shown in mixed case for clarity, interpretation of
+symbols is not case sensitive.
+
+String symbols
+
+	__ScriptFile	Link script file specification
+	__LogFile	Log file specification
+	__OutFile	Output file specification
+	__MapFile	Map file specification
+	__MapSort	Map sort specification ("A" or "N")
+	__ObjMain	Application main module object file
+	__ClipperName	Alternate name for the CLIPPER environment variable
+	__ClipperEnv	Default value of the CLIPPER environment variable
+
+String list symbols
+
+	__Obj		Other application object files
+	__ObjNew	Objects (except main) created in current build
+	__ObjExtra	Additional object files declared via Link Dialog
+	__Lib		Libraries declared via Link Dialog
+	__Packages	List of selected ExoSpace packages
+	__Mod		Object, Library pairs from Link Dialog
+			<obj> FROM <lib> list.  O1, L1, O2, L2, ...
+
+Numeric symbols
+
+	__StackSize	CA-Clipper Runtime stack allocation
+	__ProcDepth	CA-Clipper Runtime stack allowance
+
+Boolean symbols (numeric symbols with value 0 or 1):
+
+	__ClipperTools	Include CA-Clipper Tools
+	__NoDefLibs	Ignore default library declarations
+	__ClipperOver	Allow runtime CLIPPER environment to override default
+	__IgnoreError	If possible, produce output in spite of errors
+	__Map		Create link map
+	__MapSegs	Include segments with assigned addresses
+
+Environment variables:  Any environment variable may be used as a string
+symbol.  For example, the word PATH can be used as a string symbol in the
+template file.
+
+Runtime symbols:  A symbol may be created by assignment and augmented by
+reflexive assignment.  Runtime symbols may be string or string-list symbols.
+
+	Creation by assignment examples (a string or string-list is created)
+
+		#assign MySymbol    = "alpha"
+		#assign MySymbol    = "$(CLIPPER)"
+		#assign MySymbol    = __LogFile
+		#assign MySymbol    = __ObjExtra
+
+	Creation and augmentation example (A string list is created)
+
+		#assign MyObjs      = __ObjMain
+		#assign MyObjs     += __Obj
+		#assign MyObjs     += __ObjExtra
+
+Diagnostic symbols:  The symbols __Warning and __Error are set by #warning and
+#error commands.  In addition, certain syntactic errors in the template cause
+these symbols to be set.
+
+Symbol usage
+
+In the following, _Str, _Lst and _Num represent string, string-list and
+numeric symbols, respectively:
+
+	Values:
+
+	$(_Str)  Replaced by the value of the symbol (null if undefined)
+	$(_Lst)	 Outside a generated script section, replaced by a delimited
+                 list.  The separator is provided by a #sep command, the
+	         default being ", ".
+        $(_Lst)	 Inside a generated script section, replaced by a list
+	         element.
+	$(_Num)	 Replaced by the decimal ASCII value of the symbol
+
+	#if operand:
+
+	_Str	True if not null, otherwise false
+	_Lst	True if not empty, otherwise false
+	_Num	True if greater than zero, otherwise false
+
+	File specification components (_Str is a symbol.  The value of which
+	is a file specification):
+
+	$D(_Str)	Drive + directory of $(_Str)
+	$B(_Str)	Base filename of $(_Str)
+	$F(_Str)	Base filename + extension of $(_Str)
+	$R(_Str)	Drive + directory + base filename of $(_Str)
+
+Characters such as $, above; " in a quoted string; etc. can be "escaped".  The
+default escape character is ^, however, the #escape command will assign an
+alternate character.  e.g. ^$, ^", ^^.  Escaped characters will be processed
+as normal characters.  Within quoted strings, carriage return and new line
+(ASCII line feed) may be symbolized as ^r and ^n, respectively.
+
+Template Commands
+Template commands provide information,  delimit template sections and specify
+conditional processing.  The first character of a template command must be the
+pound (#) character or the character specified by the #template command.
+
+#template <c> - This command is used when the syntax of the output script file
+permits # to be the first character of a script command.  <c> will be
+recognized instead of # in subsequent template commands.
+
+#escape <c> - <c> replaces the default escape character, ^.  The characters \
+and # are not allowed.
+
+#comment "<string>" - This command declares the character or string which
+introduces a comment line.  If #comment appears, the template commands and
+spacing will be passed to the output script file as comments.
+
+#message <string> - Pass MESSAGE message to log file.
+
+#warning <string> - Pass WARNING message to log file - set __Warning symbol
+
+#error <string> - Pass ERROR  message to log file - set __Error symbol
+
+#write "<string>" - This command provides a string which is passed to the
+output script file without any interpretation.  It is not automatically
+terminated with a new line. The escape sequence, \n, inside the string is
+interpreted as a new line character.
+
+#sep "<string>" - This command, outside of a generated script section,
+supplies the separator used when a string list value is produced via
+$(<symbol>).
+
+#batch - Begins the link batch section
+
+#endbatch - Terminates the link batch section
+
+#assign - This command identifies a template assignment of string assignment.
+
+#if <symbol> - Begins a link script conditional section which is processed if
+<symbol> is "true", see above.  The conditional section may be empty which
+allows the following to be used as an #ifnot construct:
+
+		#if <symbol>
+		#else
+			script command
+			...
+			script command
+		#endif
+
+#else - Terminates a link script conditional section introduced by #if and
+begins a conditional section which is processed if the operand of the #if
+condition was NOT true.
+
+#endif - Terminates a link script conditional section.
+
+#gen <symbol> - Begins a Generated script section.  <symbol> must represent a
+string list.  The section is processed if the list is not empty.  In the body
+of the script section, $(symbol) is expanded into a series of elements from
+the members of <symbol>.  A sufficient number of script lines will be
+generated to exhaust the list.
+
+#max <n> - This command specifies the maximum length allowed for a generated
+script command.  Default value is 80.  If insertion of a single list item plus
+any #more (see below) string exceeds the maximum length, the string is not
+truncated but written to the output file.
+
+#sep "<string>" - This command, inside a generated script section, implies
+that multiple list elements separated by the specified string may occur on a
+single script line.  If addition of another list element would cause a script
+line (with a continuation string) to exceed the maximum length, a new script
+line is started.
+
+#more "<string>" - This command, permitted only in a generated script section,
+specifies a string to be added to a script line when data is to be continued
+on a new line.
+
+#endgen - Terminates a generated script section.
+
+
+Menu Editor
+In the menu editor, the current color scheme can be saved as the default color
+scheme for any future menus that are created.  To save the current color
+scheme, choose the Edit/Save Colors as Default menu item while in the menu
+editor.
+
+On page 5-31, the code listed at the top of the page contains a typo.  The DO
+WHILE command contains '<.>'.  This should be changed to a not equal operator
+'<>'.
+
+The form and menu editors both have been changed to use an OEM font by
+default.  The reasoning behind this is that when you run your CA-Clipper
+applications, the font that is used by DOS is an OEM font.  Hence, the form
+and menu editors will now attempt to simulate as close as possible the look of
+your applications when they are run in DOS.
+
+
+Source Code Editor
+If you are using any characters from the upper character set (those with an
+ASCII number of 128 or greater), you may want to change the font that is used
+in the source code editor to an OEM font (i.e., Terminal).  This will allow
+the source code editor to display the correct characters that will be
+displayed when the application is run in a DOS session.
+
+If you choose to use an ANSI font, the characters with an ASCII number of 128
+or greater may get translated to a different character altogether.  If you are
+not using any upper characters, you may use any font in the source code editor
+without further consequences.
+
+
+
+8. CA-CLIPPER FILE DESCRIPTIONS
+===============================
+The following is a list of the important files that are supplied with
+CA-Clipper 5.3a.
+
+
+BIN Directory
+-------------
+BLINKER.EXE
+CA-Clipper's real mode linker.  For a dual-mode or protected mode
+version of Blinker, you can obtain an upgrade from Blink, Inc.
+
+BML2RES.COM
+A utility that will extract bitmaps and fonts out of a bitmap library.
+
+BMLDIR.COM
+A utility that will list all resource files that exist in a bitmap library.
+
+CACI.BAT
+Used by the Workbench to launch CA-Clipper applications.
+
+CL.BAT
+A batch file which performs a compile and link.
+
+CLD.HLP
+Help file used with the CA-Clipper debugger.
+
+CLDR.EXE
+CA-Clipper's real mode debugger.
+
+CLIPPER.EXE
+The CA-Clipper compiler.
+
+DBT53.EXE
+A utility to make your Summer '87 memo fields compatibly with CA-Clipper 5.3.
+
+DBU.EXE
+A database Utility that allows you to create, modify, and browse DBF files.
+
+DBU.HLP
+Help file for DBU.EXE
+
+DBU.ICO
+The icon used for DBU in Windows.
+
+EXO1.EXE, EXO2.EXE, EXOSPACE.EXE
+CA-Clipper's protected mode linker.
+
+OPTEDIT.EXE
+Options editor for your CA-Clipper executable file.  For more information,
+including how to fix Internal Error 8002, see OPTEDIT.TXT.
+
+PE.EXE
+A text editor written in CA-Clipper.
+
+PMINFO.EXE
+A utility to provide protected mode information about your CA-Clipper
+application.
+
+RES2BML.COM
+A utility to create a bitmap library from font and bitmap files.
+
+RL.EXE
+CA-Clipper's report and label utility.
+
+RMAKE.EXE
+A utility used to create CA-Clipper executable files from a set of compile and
+link rules.
+
+RMINFO.EXE
+A utility to provide real mode information about your CA-Clipper application.
+
+RO.COM
+Toggles the read-only attribute of a file.
+
+TTF2FNT.EXE
+A Windows utility which translates Windows true-type fonts into .FNT fonts
+which are readable by CA-Clipper.
+
+UNIVESA.EXE
+To be used with older video cards which are not VESA compatible.  This
+utility is only useful when working in graphics mode.
+
+
+CACI Directory
+--------------
+CACI.EXE
+The CA-Clipper Workbench.
+
+CACI.HLP
+The CA-Clipper Windows help file.
+
+CACI_STR.DLL, CACIACT.DLL, CACIADAM.DLL, CACIATOM.DLL, CACICNTR.DLL,
+CACICOMP.DLL, CACIDATE.DLL, CACIDED.DLL, CACIEDIT.DLL, CACIERR.DLL,
+CACIFED.DLL, CACIINT.DLL, CACILINK.DLL, CACILOAD.EXE, CACILOGW.DLL,
+CACIMASK.DLL, CACIMED.DLL, CACIMEM.DLL, CACINMBR.DLL, CACINT10.DLL,
+CACIRDD.DLL, CACIRDDB.DLL, CACIRT10.DLL, CACISSYS.DLL, CACISWIN.DLL,
+CACITBOX.DLL, CACITIME.DLL, CACIWDCI.DLL, CACIWED.DLL, CACIWED.INI,
+CLIPMDLL.DLL, CTL3D.DLL, DBF.DLL, DBFNTX.DLL, RUNAUTO.COM, REMOVE.EXE,
+CACI$.DAT, TOOLHELP.DLL
+CA-Clipper Workbench support files.
+
+CACIRIDX.EXE
+A utility used to reindex your repository.  If you receive a message that your
+   repository has become corrupted, you can use this utility to reindex the
+   repository.
+
+EXOSPACE.TPL
+The default linker template that is used when building from the Workbench.
+
+BLIDUA.TPL
+A Blinker template file that can be used for Blinker dual mode applications.
+This template only applies if an upgraded version of Blinker has been
+purchased from Blink, Inc.
+
+BLIEXT.TPL
+A Blinker template file that can be used for Blinker extended mode
+applications.  This template only applies if an upgraded version of Blinker has been
+purchased from Blink, Inc.
+
+BLIRMD.TPL
+A Blinker template file that can be used for real mode applications.  This
+template only applies if an upgraded version of Blinker has been purchased
+from Blink, Inc.
+
+LIBRARY.TPL
+A template file that can be used to create library files.  In order to create
+libraries, the executable file LIB.EXE is required.
+
+
+CACI/DATA Directory
+-------------------
+CATALOG.VO, REPNAME.IND, REPTYPE.IND, SYSTEM_L.APP, SYSATOM.VO, APPTAB.VO,
+SYSTEM_L.PFX, SYSTEM_L.IDX
+CA-Clipper Workbench Repository files.
+
+DC_UTILS.PRG, DISKDATA.DBF, DISKID.NTX, SALES.DBF, SALES.PRG, SALESREP.NTX
+CA-Clipper Workbench sample files.
+
+
+INCLUDE Directory
+-----------------
+All files in this directory with an extension of .CH are CA-Clipper header
+files which you can #include in your CA-Clipper applications.
+
+All other files in this directory (.H, .API, and .MAC) are header files which
+can be used with C or Assembler code.
+
+
+LIB Directory
+-------------
+DBFCDX.LIB, _DBFCDX.LIB
+These two libraries are known as the FoxPro Replaceable Data Driver.  You
+cannot use one without the other -- they both must be linked into your
+application in order to use CDX indexes.  In addition, if you are using these
+two libraries, there is no need to include DBFMEMO.LIB as that library's
+functionality is included in _DBFCDX.LIB.
+
+ANSITERM.LIB, NOVTERM.LIB, PCBIOS.LIB
+BIOS and device driver files used by CA-Clipper.
+
+C53BLMAX.LNK, C53BLMID.LNK
+Maximum and medium overlay scripts to be used with Blinker.
+
+CLD.LIB
+Library for CA-Clipper's protected mode debugger.  Remember to link in this
+file as an OBJ.
+
+CLDR.LIB
+Library for CA-Clipper's real mode debugger.
+
+CLIPPER.BML
+Bitmap library consisting of numerous fonts as well as bitmaps used by
+CA-Clipper to display checkboxes, radiobuttons, scrollbars, etc.  To view the
+contents of this file, run BMLDIR.COM.
+
+CLIPPER.LIB
+The main library which contains most of the functionality for CA-Clipper.
+
+DBFBLOB.LIB
+A FlexFile library which provides support for Binary Large OBject files to be
+stored in memo fields.
+
+DBFMDX.LIB
+The dBase IV Replaceable Data Driver which you can use to create .MDX index
+files.
+
+DBFMEMO.LIB
+A FlexFile library which provides support for large memo fields.
+
+DBFNDX.LIB
+The dBase III+ Replaceable Data Driver which you can use to create .NDX index
+files.
+
+DBFNTX.LIB
+CA-Clipper's Replaceable Data Driver which can be used to create .NTX index
+files.
+
+EXOSPACE.LIB
+Library used by CA-Clipper's protected mode linker.
+
+EXTEND.LIB
+Miscellaneous CA-Clipper functionality is included in this library.
+
+LLIBG.LIB
+The Light Lib Graphics library which can be used to create graphics mode
+applications.  See the SET VIDEOMODE command for details.
+
+SAMPLES.LIB
+A library which was created from many of the samples provided in the samples
+directory.
+
+TERMINAL.LIB
+CA-Clipper's library which handles output to the screen.  When you use
+LLIBG.LIB or any other terminal driver, this library is replaced.
+
+
+NG Directory
+------------
+NG.EXE
+The Norton Guide engine.  Norton Guides are a DOS help tool which, when used
+in conjunction with .NG files, provide online help.
+
+C53G01C.NG, C53G02C.NG, C53G03C.NG, C53G04C.NG
+The help files for CA-Clipper 5.3
+
+
+OBJ Directory
+-------------
+_MDXSYS.OBJ
+Include this object file to set the MDX driver as the default driver for your
+application.  Be sure to include DBFMDX.LIB as a library in your link script.
+
+CDXLOCK.OBJ
+Use the CDXLOCK.OBJ driver in order to use your CA-Clipper database
+concurrently with FoxPro databases.  The CDXLOCK.OBJ driver is necessary to
+maintain compatible locking schemes between CA-Clipper and FoxPro.
+
+GT.OBJ
+Part of the CA-Clipper General Terminal driver.  This driver provides similar
+functionality to TERMINAL.LIB.  TERMINAL.LIB should be used instead of GT.OBJ
+except if you are using a 3rd party library which replaces TERMINAL.LIB.
+
+NULSYS.OBJ
+If your application does not require any RDDs (including the default DBFNTX
+driver), you can include NULSYS.OBJ into your link script as an object file to
+avoid having to include the DBFNTX.LIB.  This will increase the speed of your
+link as well decreasing the size of your application.
+
+NTXLOCK2.OBJ
+This driver will change the locking scheme for your databases so that you can
+have more records in a database file.  By default, CA-Clipper will lock
+records at 1 billion + the record number.  When databases get large enough it
+can bump into this locking area and cause problems.  With NTXLOCK2.OBJ, the
+locking offset is moved to 4 billion.  Please note, though, that using
+NTXLOCK2.OBJ will create indexes that are not compatible with older versions
+of CA-Clipper.
+
+
+SOURCE Directory
+--------------------
+You can modify this source code in these directories as you wish, but please
+keep a copy of CA-Clipper's original files.
+
+DBU Files
+The files in this directory contain all of the source code for CA-Clipper's
+Database Utility.
+
+PE Files
+The files in this directory contain all of the source code for CA-Clipper's
+text editor.
+
+RL Files
+Source code for CA-Clipper's Report and Label Utility.
+
+SAMPLE Files
+Miscellaneous samples.
+
+GDBU Files
+A new set of sample files for CA-Clipper 5.3a.  This directory contains the
+source code for a completely re-written DBU in graphic mode using CA-Clipper
+5.3.  All of the source code is provided, including the RMake file, link
+script, and bitmap libraries.  Feel free to play with this source code as you
+wish as it can help you learn how to use the new Light Lib Graphics library.
+
+SYS Files
+Included in this directory are system files which are used by CA-Clipper.
+These include the Get System, Browse System, Menu System, Memo System, Error
+System, and RDD System.
+
+Some functions that are generated by CA-Clipper's form and menu editors call
+functions in these files.  Feel free to examine and modify these files as you
+wish, but please keep a copy of the original files.
+
+
+9. HOW TO USE THE MOUSE
+=======================
+Mouse support is built into the CA-Clipper GET system.  You only need to add
+two lines of code to your application to activate the mouse:
+
+  SET EVENTMASK TO INKEY_ALL  <-- constant is defined in inkey.ch
+  MSETCURSOR(.T.)             <-- turns the mouse cursor on
+
+While in text mode, the mouse cursor will appear as a block.  This shape
+cannot be changed.  While in graphics mode, however, there are a number of
+pre-defined mouse shapes that can be used.  Please see the MSTATE() function
+for details.
+
+For more details on how to mask out events, please see the SET EVENTMASK
+command in the CA-Clipper Reference Guide Volume 2.
+
+
+10. ADDITIONAL COMIX/FLEXFILE DOCUMENTATION
+===========================================
+In order to use the Comix (CDX) driver, you need to specify both DBFCDX.LIB
+and _DBFCDX.LIB as libraries in your link script.  If you want to use the CDX
+driver as your default driver, use RDDSETDEFAULT( DBFCDX ).  Do NOT specify
+_DBFCDX.LIB as a default library.
+
+In order to use a lot of the Comix functionality, you will need to include the
+Clipper header file ORD.CH.  This header file contains a list of the Comix
+functions (all beginning with the letters ORD...()) and also contains some
+other commands and constants which are used when working with CDX files.
+
+When using the CDX driver, if you specify an invalid order with the
+following functions, a runtime error will not be raised.  OrdDescend(),
+OrdIsUnique(), OrdKeyAdd(), OrdKeyCount() OrdKeyDel(), and OrdKeyNo().  The
+CA-Clipper 5.3 documentation incorrectly states that a runtime error will be
+raised.
+
+The file extensions that will be created when using the CDX driver are .CDX
+files.  Files with an extension of .IDX are not supported.
+
+For a listing of the FlexFile functions that are available, please see the
+CA-Clipper Reference Guide Volume 1.  The functions beginning with the letters
+BLOB...() are used for the FlexFile driver.  In addition, the CA-Clipper
+header file, BLOB.CH, must be included with these applications.
+
+It is now possible to retrieve compressed data of both the huffman and LZ type
+from files created with FlexFile II's compression.  Because compression is not
+included with the Clipper version of FlexFile, only expansion is included with
+this update.  You will need to purchase FlexFile III in order to have
+compression.
+
+The drivers that were shipped with CA-Clipper 5.3 will not recognize a DBV
+file which was created using FlexFile II.  With CA-Clipper's 5.3a drivers,
+however, users can now automatically and seamlessly convert FlexFile II DBVs
+to the new format.  Once a file has been converted forward to the new format,
+FlexFile II will no longer be able to read or write to that file.
+
+To protect against accidental conversion, you must call the function
+dbvConvert(.t.) if you want CA-Clipper 5.3a to automatically convert the DBV
+from the older format to the newer format.  That is, somewhere near the top of
+your program, call the dbvConvert(.t.) function, then re-link your application
+with the CA-Clipper 5.3a libraries.
+
+FlexFile II used a block size of one byte for the highest efficiency.
+Therefore, the new file format will also be set to use a one byte block size
+which is legal in CA-Clipper 5.3.  Because FoxPro has a minimum block size of
+32, the file will not be compatible even though it has been converted to the
+new format.  To change the block size in CA-Clipper, please see the
+documentation in this file for the SET MBLOCKSIZE command.  If you want to
+make a DBV compatible with FoxPro, you must use the COPY TO VIA "DBFCDX" with
+the MBLOCKSIZE set greater than or equal to 32.
+
+Regardless of whether the memo file is FoxPro compatible or not, all space
+will be recycled during REPLACEs.
+
+Don't forget that the DBFCDX driver expects a file extension of FPT.  If you
+want to keep your DBV extensions, you have to tell CA-Clipper that the default
+file extensions for memo files is DBV.  To do this, call the SET() function
+somewhere at the beginning of your program as follows:
+
+  #include "set.ch"
+  SET( _SET_MFILEEXT, ".DBV" )
+
+There has been a great deal of confusion over which of the three drivers to
+use and when to use them (i.e. DBFCDX, DBFMEMO and DBFBLOB).  It is really
+quite simple if you understand that there are three basic layers of
+inheritance in the xBase support of CA-Clipper 5.3.  The granddaddy is the DBF
+driver.  It handles only the DBF reads and writes and never handles the
+indexes or memos.  All index drivers (_DBFCDX, DBFNTX, DBFMDX, etc.) inherit
+from this unnamed granddaddy and become themselves the parent of the memo file
+drivers DBFCDX or DBFMEMO (not DBFBLOB).  So the unnamed grandfather handles
+the DBF, the father handles the indexing and the son handles the memos.
+
+In case you are confused about DBFCDX and _DBFCDX, the DBFCDX driver handles
+memo field replacements and forces _DBFCDX to be its parent index driver.
+_DBFCDX only handles indexing.  The reason they are named similarly is because
+together they make the combination which gives CDX index support and FPT or
+DBV memo support.
+
+The DBFMEMO driver and the DBFCDX driver are almost identical.  The only
+difference is that the DBFCDX driver automatically and unconditionally
+inherits from _DBFCDX whereas the DBFMEMO driver requires the programmer to
+explicitly declare who its super index driver will be.  That is, it would be
+identical to say:
+
+  RDDSetDefault( "DBFCDX" )
+
+as it would be to say:
+
+  RDDSetDefault( "DBFMEMO" )
+  MemoSetSuper( "_DBFCDX" )
+
+Likewise, it would be superfluous to say:
+
+  RDDSetDefault( "DBFCDX" )
+  MemoSetSuper( "_DBFCDX" )
+
+simply because DBFCDX automatically and unconditionally inherits from _DBFCDX.
+MemoSetSuper() does not need to be called.
+
+The DBFBLOB driver is to be used when you want an FPT or DBV file without an
+associated DBF.  That is, this driver becomes the granddaddy but has no
+children.  There is no DBF or index support; only direct reads and writes to
+the memo file via the BLOB functions.
+
+Please note that when creating conditional indexes with the CDX driver, if you
+want to use a local variable in the condition, you must turn the query
+optimizer off.  This is due to the fact that the CDX query optimizer will
+attempt to evaluate the value of the local variable, but can only do this if
+the variable is a private or public.  To turn the query optimizer off, simply:
+
+SET ( _SET_OPTIMIZE, .F. )
+
+(Special thanks to Brice DeGanahl for his contribution to this documentation.)
+
+
+11. ADDITIONAL BLINKER DOCUMENTATION
+====================================
+The BLINKER.EXE file provided with CA-Clipper 5.3a now reads the value for the
+stack in decimal rather than hexadecimal format.
+
+There are three new template files that can be used in the CA-Clipper
+Workbench.  These three files are named BLIDUA.TPL (Dual mode template),
+BLIEXT.TPL (Extended mode template), and BLIRMD.TPL (Real mode template).
+These files are installed to your CLIP53\CACI directory.
+
+For additional information on Blinker, please read BLINKER.WRI located in
+your CLIP53 root directory.
+
+
+12. CA-CLIPPER WORKBENCH SOURCE CODE EDITOR MACROS
+==================================================
+To add macros to the CA-Clipper source code editor, you must add a section
+called '[Editor]' in the CACI.INI file.  Under this section heading, each
+macro must start with the letter 'M' and be followed by a unique sequence
+number starting with 1.  The sequence numbers must increment from 1, and not
+skip any numbers.
+
+This is followed by an equal (=) sign, then a combination of virtual key codes
+separated by plus (+) signs. The virtual key codes must contain at least one
+of the following: VK_ALT, VK_CONTROL or VK_SHIFT.  This is followed by a colon
+(:) symbol to delimit the end of the virtual key codes.
+
+This is then followed by one or more action commands separated by plus (+)
+signs.
+
+Carriage return and line feeds can be embedded into the text following the
+INSERTTEXT action command by using the sequence '\r\n'.
+
+Example:
+
+[Editor]
+M1=VK_ALT+VK_F7:INSERTLINE+INSERTTEXT+"Hello, World!\r\nMacro example."
+M2=VK_ALT+VK_SHIFT+VK_F8:DELETELINE
+
+Note: The maximum number of macros is 500, and the maximum size of each macro
+is 1000 characters.  However, be aware that Windows .INI files have a file
+size limitation of 64K. Thus, you may reach the maximum .INI file size before
+you have exhausted the macro number/size limitation.
+
+Virtual Key Codes:
+
+The following table shows the symbolic constant names and the corresponding
+keyboard equivalents used by the CA-Clipper source code editor macro processor.
+
+Symbolic name		Mouse or keyboard equivalent
+-------------           ----------------------------
+VK_LBUTTON		Left mouse button
+VK_RBUTTON		Right mouse button
+VK_CANCEL		Used for control-break processing
+VK_MBUTTON		Middle mouse button (three-button mouse)
+VK_BACK			BACKSPACE key
+VK_TAB			TAB key
+VK_CLEAR		CLEAR key
+VK_RETURN		ENTER key
+VK_SHIFT		SHIFT key
+VK_CONTROL		CTRL key
+VK_ALT			ALT key  // NOTE: name used by Windows is VK_MENU
+VK_PAUSE		PAUSE key
+
+VK_CAPITAL		CAPS LOCK key
+VK_ESCAPE		ESC key
+VK_SPACE		SPACEBAR
+VK_PRIOR		PAGE UP key
+VK_NEXT			PAGE DOWN key
+VK_END			END key
+VK_HOME			HOME key
+VK_LEFT			LEFT ARROW key
+VK_UP			UP ARROW key
+VK_RIGHT		RIGHT ARROW key
+VK_DOWN			DOWN ARROW key
+VK_SELECT		SELECT key
+VK_PRINT		PRINT key
+
+VK_EXECUTE		EXECUTE key
+VK_SNAPSHOT		PRINT SCREEN key for Windows 3.0 and later
+VK_INSERT		INS key
+VK_DELETE		DEL key
+VK_HELP			HELP key
+
+VK_NUMPAD0		Numeric keypad 0 key
+VK_NUMPAD1		Numeric keypad 1 key
+VK_NUMPAD2		Numeric keypad 2 key
+VK_NUMPAD3		Numeric keypad 3 key
+VK_NUMPAD4		Numeric keypad 4 key
+VK_NUMPAD5		Numeric keypad 5 key
+VK_NUMPAD6		Numeric keypad 6 key
+VK_NUMPAD7		Numeric keypad 7 key
+VK_NUMPAD8		Numeric keypad 8 key
+VK_NUMPAD9		Numeric keypad 9 key
+
+VK_MULTIPLY		Multiply key
+VK_ADD			Add key
+VK_SEPARATOR		Separator key
+VK_SUBTRACT		Subtract key
+VK_DECIMAL		Decimal key
+VK_DIVIDE		Divide key
+
+VK_F1			F1 key
+VK_F2			F2 key
+VK_F3			F3 key
+VK_F4			F4 key
+VK_F5			F5 key
+VK_F6			F6 key
+VK_F7			F7 key
+VK_F8			F8 key
+VK_F9			F9 key
+VK_F10			F10 key
+VK_F11			F11 key
+VK_F12			F12 key
+VK_F13			F13 key
+VK_F14			F14 key
+VK_F15			F15 key
+VK_F16			F16 key
+VK_F17			F17 key
+VK_F18			F18 key
+VK_F19			F19 key
+VK_F20			F20 key
+VK_F21			F21 key
+VK_F22			F22 key
+VK_F23			F23 key
+VK_F24			F24 key
+VK_NUMLOCK		NUM LOCK key
+VK_SCROLL		SCROLL LOCK key
+
+VK_0			0 key
+VK_1			1 key
+VK_2			2 key
+VK_3			3 key
+VK_4			4 key
+VK_5			5 key
+VK_6			6 key
+VK_7			7 key
+VK_8			8 key
+VK_9			9 key
+
+VK_A			A key
+VK_B			B key
+VK_C			C key
+VK_D			D key
+VK_E			E key
+VK_F			F key
+VK_G			G key
+VK_H			H key
+VK_I			I key
+VK_J			J key
+VK_K			K key
+VK_L			L key
+VK_M			M key
+VK_N			N key
+VK_O			O key
+VK_P			P key
+VK_Q			Q key
+VK_R		        R key
+VK_S			S key
+VK_T			T key
+VK_U			U key
+VK_V			V key
+VK_W			W key
+VK_X			X key
+VK_Y			Y key
+VK_Z			Z key
+
+Action Commands:
+
+The following table shows the command names and the corresponding actions
+performed by the CA-Clipper source code editor macro processor.
+
+Command name		Action performed
+------------		----------------
+BLOCKEND		Set end block marker.
+BLOCKSTART		Set start block marker.
+BUILD			Build application.
+CLEAR			Clear current buffer.
+CLOSE			Close parent window.
+COLLAPSEALL		Collapse all entities.
+COPY			Copy highlighted text.
+CUT			Cut highlighted text.
+DEBUG			Debug application.
+DELETE			Delete character.
+DELETELINE		Delete current line.
+DOWN			Move cursor down one line.
+ENDBUFFER		Move cursor to end of buffer.
+ENDLINE			Move cursor to end of line.
+ENDPAGE			Move cursor to end of page.
+EXPANDALL		Expand all entities.
+FIND			Show 'Find' dialog box.
+FINDNEXT		Find next matching text in source code editor.
+IMPORT			Show 'Import' dialog box.
+INSERTLINE		Insert a new line.
+INSERTTEXT		Insert text.  Followed by text in quotes,  example:
+	   			INSERTTEXT+"Hello World!"
+LEFT			Move cursor left one character.
+PAGEBACK		Page down.
+PAGEUP			Page up.
+PASTE			Paste text from clipboard into source editor.
+PRINT			Show 'Print' dialog box.
+PRINTSETUP		Show 'Printer Setup' dialog box.
+REDO			Redo last action.
+REPLACE			Show the 'Replace' dialog box.
+RIGHT			Move cursor right one character.
+RUN			Run application.
+SAVE			Save current text.
+SELECTALL		Select all text.
+TOPBUFFER		Move cursor to top of buffer.
+TOPLINE			Move cursor to beginning of current line.
+TOPPAGE			Move cursor to top of current page.
+UNDO			Undo last action.
+UP			Move cursor up one line.
+WORDRIGHT		Move cursor right one word.
+WORDLEFT		Move cursor left one word.
+
+
+13. CA-CLIPPER TOOLS NOTES
+==========================
+If you link in either of the CA-Clipper Tools extended terminal drivers
+(CTUSP.OBJ or CTUS.OBJ), you will no longer have mouse support in your
+CA-Clipper applications.  Linking in the CA-Clipper Tools libraries alone
+will allow CA-Clipper's mouse support to fully function.  You will need to
+link TERMINAL.LIB (or any other terminal driver such as LLIBG.LIB) before the
+CA-Clipper Tool's library.
+
+If you need to use a function that requires a CA-Clipper Tools extended
+terminal driver, you may want to take a look at the functions in the
+Light Lib Graphics Library (LLIBG.LIB) that is supplied with CA-Clipper
+5.3.  These functions begin with the letter g...() and can be found in the
+CA-Clipper Reference Guide Volume 1.  This library can provide many of the
+same functions as the CA-Clipper Tools extended terminal drivers.
+
+The CA-Clipper Tools extended terminal drivers are not compatible with
+the Light Lib Graphics Library (LLIBG.LIB).
+
+If you are using CA-Clipper Tools from the CA-Clipper 5.3 Workbench,
+simply check the box labeled "Use Clipper Tools" in the linker
+options dialog box for your application.  This will automatically
+supply the CTP.LIB for your build, however, it will not supply any
+OBJ files that are required.  If you also need a CA-Clipper Tools
+OBJ file, you must add this file name to the editbox labeled
+"Additional .OBJ Files" in the linker options dialog box.
+
+If you are using the protected mode version of CA-Clipper Tools along
+with protected mode Blinker, you must include the Blinker library
+BLXRATEX.LIB.
+
+
+14. INTERNATIONAL NOTES
+=======================
+A new section must be added to the CACI.INI file for international users.
+This section provides the translation of strings used for accelerator keys
+in the menu editor.  Please add the following if you are using a non-English
+version of the CA-Clipper Workbench:
+
+[Intl]
+UP=Up        ; Up arrow
+DOWN=Down    ; Down arrow
+LEFT=Left    ; Left arrow
+RIGHT=Right  ; Right arrow
+HOME=Home    ; Home
+END=End      ; End
+PGUP=PgUp    ; Page Up
+PGDN=PgDn    ; Page Down
+ENTER=Enter  ; Enter
+SPACE=Space  ; Space bar
+ESC=Esc      ; Escape
+INS=Ins      ; Insert
+DEL=Del      ; Delete
+BS=BS        ; Backspace
+TAB=Tab      ; Tab
+
+Do NOT update the strings on the left side of the '='.  Only change the
+strings to the right of the '='.  The strings that appear to the right of the
+'=' will appear in the menu editor and as the accelerator keys in the code
+generated by the menu editor.
+
+If you are using any characters in the upper character set (those with an
+ASCII number of 128 or higher), you may wish to use an OEM font (such as
+Terminal) in the Workbench's Source Code Editor.  This will allow you to see
+the characters as they will be shown when the program is run, rather than
+their ANSI equivalents.
+
+
+15. SUPPORTED OPERATING SYSTEMS
+===============================
+CA-Clipper is supported under all MS-DOS versions later than and including
+MS-DOS 3.3.
+
+The CA-Clipper Workbench is supported under Windows 3.1, Windows 3.11, Windows
+for Workgroups, and Windows 95.  Please note that Windows 95 was NOT
+supported in the initial release of CA-Clipper 5.3, but is supported in
+CA-Clipper 5.3a.  OS/2 (any version) and Windows NT are NOT fully supported at
+this time.

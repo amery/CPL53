@@ -1,0 +1,195 @@
+OPTEDIT Utility
+
+The Option Editor, OPTEDIT.EXE, is a utility that allows you to change
+the behavior of your CA-Clipper applications which have been linked using
+ExoSpace.  In most cases, your CA-Clipper executable files will behave as
+you need them.  However, if you want to change one or more behaviors of
+your application, the option editor gives you this flexibility.  OPTEDIT
+is run from the DOS command line.
+
+
+SYNTAX
+
+Syntax:  OPTEDIT [-option [-option...]] [filename] [@response[.opt]]
+
+Options may appear in any order and a space should be used to separate
+options.  Using the @ key designates a response file.  The default
+extension for a response file is .OPT.
+
+filename is the name of the CA-Clipper executable.  If the executable is
+not in the current directory, you must specify a path name.  If you do not
+specify a filename, but do specify one or more options, OPTEDIT issues an
+error.
+
+If you enter OPTEDIT on the DOS command line with no arguments, the Option
+Editor lists the default values for all user-controllable options.
+
+
+RESPONSE FILES
+
+You can also use a response file to list options.  You are allowed
+multiple response files as needed.  The response files will be executed in
+the order in which they are specified.
+
+Within response files, carriage returns are treated as spaces.  To put a
+comment in the response files, use a semicolon or an exclamation point
+before the comment and a carriage return after it.  Response files may be
+nested.
+
+A sample response file:
+
+; Example of response files for OPTEDIT
+; Initially allocate 4MB of memory
+-EXTRAMIN 4096
+! end of example
+
+A sample call to OPTEDIT:
+
+OPTEDIT myapp.exe @myopts.opt
+
+
+OPTIONS
+
+Option names can begin with either a dash (-) or a slash(/).  In the
+description below, numbers are designated by nnnn.  Numeric fields may be
+entered as decimals or as hexadecimal (0 through F, preceded by '0x').
+
+Options that can be toggled by adding NO, such as -NOBANNER, are listed
+under the primary name, such as -BANNER.  The NO is shown in brackets.
+
+-ALWAYSMIGRATE (Default: AUTOMIGRATE)
+This setting changes the swap type of code segments from SWAPNEVER to
+SWAPALWAYS.  Using this setting, code segments will always be swapped out.
+
+-[NO]AUTOCANCEL (Default: -AUTOCANCEL)
+Turns off the CA-Clipper executable's automatic cancellation of aliases.
+This option should not be used with CA-Clipper applications.  Use of this
+option can cause protection faults and/or data corruption.
+
+-[NO]AUTOGRAB (Default: -AUTOGRAB)
+Whenever your CA-Clipper application allocates more memory than has already
+been reserved for the program, the application also requests more memory
+from the system.  If -NOAUTOGRAB is specified, this additional memory will
+not be reserved.  This option can be used to simulate a machine with less
+memory.
+
+-AUTOMIGRATE (Default: -AUTOMIGRATE)
+This setting is used in conjunction with CA-Clipper's Virtual Memory
+Management system.  All code segments, the first time they are selected for
+replacement, are written out to the swap file.  After the code segments
+have been written once, they will not be copied out again.  If they are
+needed again, they are copied from the swap file.  Data segments are
+written to and read from the swap file every time.
+
+-[NO]BANNER (Default: -BANNER)
+Determines whether or not the CA-Clipper executable displays the DOS/16M
+copyright message.  The DOS/16M license agreement requires notice of the
+Tenberry Software copyright, but it does not have to be in the banner.
+If the -NOBANNER option is used, then you must include the DOS/16M
+copyright information in the documentation you ship with your product.
+
+-BUFFER nnnn (Default: 4096)
+Specifies, in bytes, the transfer buffer size.  All transfers use low
+memory.  A read to extended memory must first be transferred into low
+memory and then copied up to extended memory.  A write must be copied down
+from extended memory into low memory and then the information can be
+written to disk.  If you change this size to suit your application, you can
+often increase program execution speed.  The maximum value for the transfer
+buffer size is 32768 bytes.  To reset the buffer to the default size,
+specify -BUFFER 0.
+
+-EXTRAMIN nnnn (Default: 0)
+By default, the CA-Clipper executable file calculates the amount of memory
+it will need to run your program.  If you need more memory, use the
+-EXTRAMIN option to allocate extra memory at the start of your program.  If
+there is not enough memory available, you will receive DOS/16M error 1,
+"Not enough extended memory." CA-Clipper's internal error 8002 can be
+avoided by using the -EXTRAMIN parameter.  Please note that the -EXTRAMIN
+option is ignored if CA-Clipper's VMM system is used.  Under Windows, the
+VMM system is disabled by default and hence the -EXTRAMIN option can be
+used.
+
+-FREELOW (Default: -NOFREELOW)
+This option frees as much low memory as possible when your program shells
+out to DOS or attempts to run a program outside of the VMM system.  This
+option can reduce program efficiency.  NOFREELOW is the default.  If your
+program runs on machines that have limited extended memory, however, you
+may prefer to use the FREELOW option instead of specifying a large
+RESERVELOW parameter.
+
+-GDTSIZE nnnn (Default: 65536)
+This option specifies the size of the Global Descriptor Table (in bytes).
+You can save space by specifying a small number, however, this will
+restrict the availability of transparent segments.
+
+-INIT00 (Default: -NOINIT)
+Initializes memory to zeros when your CA-Clipper program loads.  Use this
+option to find bugs related to uninitialized memory or to provide a
+consistent working environment.  This option does not affect memory
+allocated by compiler library functions such as malloc.
+
+-IINITFF (Default: -NOINIT)
+Fills memory with 0xFF when your CA-Clipper program loads.  Use this option
+to find bugs related to uninitialized memory.  This option does not affect
+memory allocated by compiler library functions such as malloc.
+
+-MFORCEEXT (Default: -MPREFEREXT)
+This option specifies the memory strategy for loading your application.
+When this option is set, the application is loaded in extended memory and
+will fail if there is not enough extended memory available.
+
+-MFORCELOW (Default: -MPREFEREXT)
+This option specifies the memory strategy for loading your application.
+When this option is set, the application is loaded in low memory and will
+fail if there is not enough low memory available.
+
+-MPREFEREXT (Default: -MPREFEREXT)
+This option specifies the memory strategy for loading your application.
+When this option is set, the application will load in extended memory
+unless there is not enough extended memory available.  In this case, it
+will use low memory.
+
+-MPREFERLOW (Default: -MPREFEREXT)
+This option specifies the memory strategy for loading your application.
+When this option is set, the application will load in low memory unless
+there is not enough low memory available.  In this case, it will use
+extended memory.
+
+-NEVERMIGRATE (Default: AUTOMIGRATE)
+This setting is used in conjunction with CA-Clipper's Virtual Memory
+Management system.  When this option is used, the Virtual Memory Manager
+never writes code segments to the swap file.
+
+-NOINIT (Default: -NOINIT)
+Turns off -INIT00 and -INITFF
+
+-[NO]PACKAGE (Default: -NOPACKAGE)
+This option does not apply and should not be used on a CA-Clipper
+executable file.
+
+-TSCOUNT nn (Default: 4)
+This option determines the number of stack frames available to your
+CA-Clipper program.  DOS/16M uses a transfer stack frame whenever an
+interrupt occurs in one mode, but is handled in the other.  If your
+application deals with a large number of asynchronous interrupts, you may
+have more than 4 levels of interrupts in effect at one time.  Use this
+option to increase the number of transfer stack frames.
+
+-TSSIZE nnn (Default: Outside of DPMI, 256 bytes; under DPMI, 384 bytes)
+Specifies the size, in bytes, of a transfer stack frame.  The default
+transfer size leaves approximately 128 bytes available to your application.
+If your application interacts with real-mode procedures that may expect
+more than 128 bytes in a transfer stack frame, you can use this option to
+increase the transfer stack size.
+
+-[NO]UMB (Default: -NOUMB)
+This option tells the application to move its low-memory runtime code into
+an Upper Memory Block (UMB).
+
+-VXD xxxx
+This option does not apply and should not be used on a CA-Clipper
+executable file.
+
+-[NO]WINSTARTOK
+This option does not apply and should not be used on a CA-Clipper
+executable file.

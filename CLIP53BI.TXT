@@ -1,0 +1,652 @@
+CA-Clipper Release Notes
+Version 5.3b Intl
+May 1997
+
+
+CONTENTS
+========
+1.  Installation Instructions
+2.  What's Fixed in CA-Clipper 5.3b
+3.  Other CA-Clipper 5.3 Patches
+4.  CA-Clipper File Descriptions
+5.  Supported Operating Systems
+6.  MISSING STD.CH and SET.CH Documentation
+7.  Miscellaneous
+
+1. INSTALLATION INSTRUCTIONS
+============================
+There are several important pieces of information that you must be aware of
+before installing CA-Clipper 5.3b.
+
+* Please backup your existing CA-Clipper 5.3a files and directory structure
+before running this installation.
+
+* You must install on top of CA-Clipper version 5.3a.  This installation will
+not work properly if you attempt to install over any CA-Clipper version other
+than 5.3a.
+
+* CA-Clipper 5.3b can be installed only from DOS.
+
+* You must have 8MB free on the hard disk where CA-Clipper 5.3a is installed.
+
+You must place the files 53A_BI.RTP and PATCH.EXE in the root of the directory
+where CA-Clipper 5.3a is installed.
+
+From the DOS prompt, execute the following:
+
+    PATCH /S 53A_BI.RTP > PATCH.LOG
+
+After the patch process has completed, please examine the PATCH.LOG file in
+the root of your CA-Clipper 5.3b directory to view the results of the patch.
+
+
+2. WHAT'S FIXED IN CA-CLIPPER 5.3b
+==================================
+Below is a list of fixes for CA-Clipper version 5.3b.
+
+Category      Description of Fixed Problem
+--------      ----------------------------
+Append        APPEND FROM...DELIMITED. If text file record(s) are offset
+              by one or more spaces at their beginning, the first FIELD
+              in the target database will no longer contain displaced data.
+
+Blob          No longer receive an unresolved external or multiple definition
+              error using DBFBLOB.LIB.
+
+DOS Debugger  Protected Mode Debugger LOCAL variable values are no longer
+              affected by the presence of a file-wide STATIC.
+
+Error System  DOS error 5 no longer occurs before NETERR() when the opening
+              of a exclusive database fails.
+
+Get System    Any Class Object is now permitted to be used with the
+              GET system.
+
+              The saved color settings are no longer restored too late
+              when using delimiters.
+
+              Using a long GET caption will no longer GPF under Exospace.
+
+              Changed HitTest() to a PUBLIC Function for access from
+              MenuSys.Prg to allow mouse recognition on a Get Object while in
+              a MenuModal().
+
+              Changed Accelerator() to a PUBLIC Function for access from
+              MenuSys.Prg to allow accelerator key recognition on a Get Object
+              while in a MenuModal().
+
+              Added GetSystem Array Element to access Menu Item ID Number
+              which was not available.
+
+              Added GetSystem Array Element to save and restore CURSOR shape
+              and display because it wasn't being properly restored.
+
+              Added code to properly save and restore the CURSOR.
+
+              Added code to properly save and restore the Menu ID Number.
+
+              Following 2 items were changed/added to prevent both Pre and
+              Post GET VALIDation from executing twice.
+              This was done by:
+
+                Added code to test IIF() a Mouse Hit or Accelerator key
+                was pressed:
+
+                  1) in GetReader().
+
+                  2) in GUIReader().
+
+                  3) in TBReader().
+
+                Added code to test EXITing a GET or the READ:
+
+                  1) in GetReader().
+
+                  2) in GUIReader().
+
+                  3) in TBReader().
+
+              All instances of the MenuModal() call are saved to a Menu ID
+              Number element in the GetSystem Array because previously it was
+              not accessable.
+
+              nHotItem was used to replace the second parameter in each call to
+              MenuModal() because the Menu ID Number retrieved was not updated.
+
+              Added missing assignments for GetSystem Array Elements for the
+              READVAR() and GETACTIVE() values because they were not reset
+              and were not previously available from application code from
+              within:
+
+                1) ClearGetSysVars()
+
+                2) RestoreGetSysVars()
+
+              Added ROW(), COL(), and SETPOS() to EraseMsg() because CURSOR
+              position was previously not handled as accurately.
+
+IDE           Corrected the status bar messages.
+
+              When in the Source Code Editor, the Menu Editor is no longer
+              grayed out.
+
+              The Source Code Editor can now support international keyboards
+              (international bug).
+
+              If the DEL key is the hot-key for delete module according to
+              the file menu, it no longer deletes entities from within module
+              specific entity borwser.
+
+              After iconizing the module browser, the module browser is now
+              able to be restored.
+
+              Application browser: the DELETE dialog box is now modal.
+
+              Window Editor: 'Next' menu command and hot-key now work properly.
+  
+              Rename a application and then do Export.  When the Export dialog
+              box is displayed it now has the new application name.
+
+              Menu editor: the "External PRG already exist..." message box
+              is now modal.
+
+              When import and build an application in a blank application
+              browser, the module browser is no longer shown the first time
+              with unknown text.
+
+              Form Editor: Resizing a combo box no longer changes the text.
+
+              Using the default color from the form editor, it is no longer
+              difficult to see the blank cursor, (this happens after you choose
+              an item from the toolbox on a blue background).
+  
+              In source code editor, the menu Editor menu item in the tools
+              menu is no longer active.
+
+              When building with editors open, if work has been saved, no
+              longer receive the following message box: "Warning! Unsaved work
+              will not be included".
+
+              Form Editor properties window is now saved.
+
+Math          MSC 8.0 math error text will no longer be displayed, (e.g.,
+              'sqrt: _DOMAIN error' resulting from a call to SQRT(-1)).
+
+Memory        Memory loss no longer occurs when opening and closing databases.
+
+              Memory loss no longer occurs when opening and closing databases
+              with CDX indexes.
+
+Menu System   Added calls to the GetSys.Prg PUBLIC Function HitTest() because
+              a Mouse Hit on a GET was not detected from a Menu Object.
+
+              Added calls to GetSys.Prg PUBLIC Function Accelerator() because
+              GET shortcut keys were not detected while in a Menu Object.
+
+              Added Menu System Array Element to access CURSOR ROW()
+              because it was not globally available to the application.
+
+              Added Menu System Array Element to access CURSOR COL().
+              because it was not globally available to the application.
+
+              Added Menu System Array Element to access CURSOR position.
+              because it was not globally available to the application.
+
+              Added GetList as a new last parameter for MenuModal() because
+              access to Get Objects from Menu Objects is required when both
+              are used.
+
+              Added code to save and restore the CURSOR Position and shape
+              because it was not previously restored properly by assigning the:
+
+                1) Row.
+
+                2) Column.
+
+                3) Shape.
+
+                4) and calling SETPOS().
+
+              Changed Menu System HitTest() Function to MHitTest() to avoid
+              conflict with the PUBLIC Function HitTest() in GetSys.Prg.
+
+              Added code to save and restore CURSOR position and shape before
+              and after each call to EVAL() for a Menu Object because it wasn't
+              properly restored.
+
+              Added missing PARENTHESES in commented out source code because it
+              was not previously compilable without syntax errors if it was
+              uncommented for usage.
+
+Tools         Linking in the new __WAIT_4.OBJ (located in the OBJ directory)
+              before CA-Clipper Tools will eliminate the R6003 and/or GPF
+              at startup using AMD or Cyrix processors.
+
+ScrollBar     If the end of a displayed ScrollBar Object ends at MAXROW() and
+              MAXCOL() it will no longer cause the screen to scroll.
+
+              Using the Update() method with multiple ScrollBar objects will
+              no longer cause erroneous screen painting.
+
+Version       Version() will now display the build number.
+
+
+3. OTHER CA-CLIPPER PATCHES
+===========================
+Since the release of CA-Clipper 5.3, several patches for CA-Clipper and
+Comix/FlexFile have been released.  All of those patches have been
+incorporated into CA-Clipper 5.3b.
+
+These patches are the following:
+
+* OPT_53.EXE - Includes OPTEDIT.EXE which provides a fix for Internal Error
+8002.
+
+* CLFLEX1E.ZIP - Contains fixes for Comix and FlexFile libraries.
+
+* CL53UP.ZIP - Contains indexing fix by using SORTOF.OBJ.
+
+* C53AI1.ZIP & C53AI2.ZIP - Contains Revision A Update.
+
+Please note that the use of SORTOF.OBJ is not necessary in version 5.3b.  This
+fix has been incorporated into CLIPPER.LIB.
+
+
+4. CA-CLIPPER FILE DESCRIPTIONS
+===============================
+The following is a list of the important files that are supplied with
+CA-Clipper 5.3b.
+
+
+BIN Directory
+-------------
+BLINKER.EXE
+CA-Clipper's real mode linker.  For a dual-mode or protected mode
+version of Blinker, you can obtain an upgrade from Blink, Inc.
+
+BML2RES.COM
+A utility that will extract bitmaps and fonts out of a bitmap library.
+
+BMLDIR.COM
+A utility that will list all resource files that exist in a bitmap library.
+
+CACI.BAT
+Used by the Workbench to launch CA-Clipper applications.
+
+CL.BAT
+A batch file designed to compile and link one .Prg into an .EXE.
+
+CLD.HLP
+Help file used with the CA-Clipper debugger.
+
+CLDR.EXE
+CA-Clipper's real mode debugger.
+
+CLIPPER.EXE
+The CA-Clipper compiler.
+
+DBT53.EXE
+A utility to make your Summer '87 memo fields compatibly with CA-Clipper 5.3.
+
+DBU.EXE
+A database Utility that allows you to create, modify, and browse DBF files.
+
+DBU.HLP
+Help file for DBU.EXE
+
+DBU.ICO
+The icon used for DBU in Windows.
+
+EXOSPACE.EXE, EXO1.EXE, EXO2.EXE.
+CA-Clipper's protected mode linker, splicer, and loader.
+
+OPTEDIT.EXE
+Options editor for CA-Clipper/Exospace .EXEcutable files. See the OPTEDIT.TXT
+information on how to fix Internal Error 8002 and remove the Startup BANNER.
+
+PE.EXE
+A simple text editor written in CA-Clipper.
+
+PMINFO.EXE
+Utility to report a machine's protected mode memory configuration. Useful for
+runtime information affecting your CA-Clipper/Exospace created applications.
+
+RES2BML.COM
+A utility to create a bitmap library from font and bitmap files.
+
+RL.EXE
+CA-Clipper's .FRM Report Form and .LBL Label Form file editor utility.
+
+RMAKE.EXE
+Utility used to create CA-Clipper .EXEcutable files. Reads a set of compile
+and link rules contained in an .RMK file. May also be used to execute other
+utilities, including LIB.EXE, to create other files.
+
+RMINFO.EXE
+Utility to report your machine's real mode memory configuration. Useful for
+runtime information affecting your CA-Clipper/Exospace created applications.
+
+RO.COM
+Toggles ReadOnly attribute of a file, (e.g., RO <.EXE>, permits file Sharing).
+
+TTF2FNT.EXE
+A Windows utility which translates Windows true-type fonts into .FNT fonts
+which are readable by CA-Clipper.
+
+UNIVESA.EXE
+Utility for use with older video cards which are not VESA compatible. Only
+useful when working in graphics mode. (Not all video cards are compatible.)
+
+
+CACI Directory
+--------------
+CACI.EXE
+The CA-Clipper Workbench.
+
+CACI.HLP
+The CA-Clipper Windows help file.
+
+CACI_STR.DLL, CACIACT.DLL, CACIADAM.DLL, CACIATOM.DLL, CACICNTR.DLL,
+CACICOMP.DLL, CACIDATE.DLL, CACIDED.DLL, CACIEDIT.DLL, CACIERR.DLL,
+CACIFED.DLL, CACIINT.DLL, CACILINK.DLL, CACILOAD.EXE, CACILOGW.DLL,
+CACIMASK.DLL, CACIMED.DLL, CACIMEM.DLL, CACINMBR.DLL, CACINT10.DLL,
+CACIRDD.DLL, CACIRDDB.DLL, CACIRT10.DLL, CACISSYS.DLL, CACISWIN.DLL,
+CACITBOX.DLL, CACITIME.DLL, CACIWDCI.DLL, CACIWED.DLL, CACIWED.INI,
+CLIPMDLL.DLL, CTL3D.DLL, DBF.DLL, DBFNTX.DLL, RUNAUTO.COM, REMOVE.EXE,
+CACI$.DAT, TOOLHELP.DLL
+CA-Clipper Workbench support files.
+
+CACIRIDX.EXE
+A utility used to reindex your repository.  If you receive a message that your
+   repository has become corrupted, you can use this utility to reindex the
+   repository.
+
+EXOSPACE.TPL
+The default linker template that is used when building from the Workbench.
+
+BLIDUA.TPL
+A Blinker template file that can be used for Blinker dual mode applications.
+This template only applies if an upgraded version of Blinker has been
+purchased from Blink, Inc.
+
+BLIEXT.TPL
+A Blinker template file that can be used for Blinker extended mode
+applications.  This template only applies if an upgraded version of Blinker has been
+purchased from Blink, Inc.
+
+BLIRMD.TPL
+A Blinker template file that can be used for real mode applications.  This
+template only applies if an upgraded version of Blinker has been purchased
+from Blink, Inc.
+
+LIBRARY.TPL
+A template file that can be used to create library files.  In order to create
+libraries, the executable file LIB.EXE is required.
+
+
+CACI/DATA Directory
+-------------------
+CATALOG.VO, REPNAME.IND, REPTYPE.IND, SYSTEM_L.APP, SYSATOM.VO, APPTAB.VO,
+SYSTEM_L.PFX, SYSTEM_L.IDX
+CA-Clipper Workbench Repository files.
+
+DC_UTILS.PRG, DISKDATA.DBF, DISKID.NTX, SALES.DBF, SALES.PRG, SALESREP.NTX
+CA-Clipper Workbench sample files.
+
+
+INCLUDE Directory
+-----------------
+All files in this directory with an extension of .CH are CA-Clipper header
+files which you can #include in your CA-Clipper applications.
+
+All other files in this directory (.H, .API, and .MAC) are header files which
+can be used with C or Assembler code.
+
+
+LIB Directory
+-------------
+DBFCDX.LIB, _DBFCDX.LIB
+Both .LIBraries are known as the FoxPro 2.6 for DOS Replaceable Data Driver.
+Both are required to support .DBF, .CDX, and .FPT or .DBV Child Memo files.
+The Parent _DBFCDX Database and INDEXing RDD may be used without the Child
+DBFCDX Memo/BLOB RDD. Only linking _DBFCDX is required when no .FPT or .DBV
+Memo files are used within the application and in order to use .CDX indexes.
+Also, if using the Child DBFCDX RDD, linking DBFMEMO.LIB is not necessary,
+as that .LIBrary's functionality is included in DBFCDX.LIB. Single TAG .CDX
+and .IDX files are not supported. Default MEMOBLOCK or MBLOCKSIZE SETting is
+64 Bytes.
+
+ANSITERM.LIB, NOVTERM.LIB, PCBIOS.LIB
+BIOS and device driver files used by CA-Clipper.
+
+C53BLMAX.LNK, C53BLMID.LNK
+Maximum and medium overlay scripts to be used with Blinker.
+
+CLD.LIB
+Library for CA-Clipper's protected mode Debugger. Remember to link this into
+the root of the .EXEcutable in a FILE statement after compiled .OBJs. (There is
+no CLD.EXE equivalent of CLDR.EXE, so Restart and .EXEcutable command line
+Debugger Options are not available. SET Options with CLIPPERDEBUG=/D /S.)
+
+CLDR.LIB
+Library for CA-Clipper's real mode Debugger. Remember to link this into the
+root of the .EXEcutable in a FILE statement after compiled .OBJs. Use together
+with the CLRD.EXE.
+
+CLIPPER.BML
+Bitmap library consisting of numerous fonts as well as bitmaps used by
+CA-Clipper to display checkboxes, radiobuttons, scrollbars, etc.  To view the
+contents of this file, run BMLDIR.COM.
+
+CLIPPER.LIB
+The main library which contains most of the functionality for CA-Clipper.
+
+DBFBLOB.LIB
+A FlexFile library which provides support for Binary Large OBject files to be
+stored in memo fields. Default MEMOBLOCK or MBLOCKSIZE SETting is 64 Bytes.
+
+DBFMDX.LIB
+The dBase IV 1.1 through 2.0 Replaceable Data Driver which may be used to
+create .MDX multi-TAG index files.
+
+DBFMEMO.LIB
+A FlexFile library which provides support for large memo fields.  Default
+MEMOBLOCK or MBLOCKSIZE SETting is 64 Bytes.
+
+DBFNDX.LIB
+dBaseIII Plus Replaceable Data Driver which you can use to create .NDX index
+files.
+
+DBFNTX.LIB
+CA-Clipper's Replaceable Data Driver which can be used to create .NTX index
+files. The Child DBFMEMO Memo/BLOB RDD may be used with it to support Child
+.FPT (or .DBV) files.
+
+EXOSPACE.LIB
+Library used by CA-Clipper's protected mode linker.
+
+EXTEND.LIB
+Miscellaneous CA-Clipper functionality is included in this library.
+
+LLIBG.LIB
+The Light Lib Graphics library which can be used to create graphics mode
+applications.  See the SET VIDEOMODE command for details.
+
+SAMPLES.LIB
+A library which was created from many of the samples provided in the samples
+directory.
+
+TERMINAL.LIB
+CA-Clipper's library which handles output to the screen.  When you use
+LLIBG.LIB or any other terminal driver, this library is replaced.
+
+
+NG Directory
+------------
+NG.EXE
+The Norton Guide engine.  Norton Guides are a DOS help tool which, when used
+in conjunction with .NG files, provide online help.
+
+C53G01C.NG, C53G02C.NG, C53G03C.NG, C53G04C.NG
+The help files for CA-Clipper 5.3
+
+
+OBJ Directory
+-------------
+_MDXSYS.OBJ
+Include this object file to set the MDX driver as the default driver for your
+application.  Be sure to include DBFMDX.LIB as a library in your link script.
+
+CDXLOCK.OBJ
+Use the CDXLOCK.OBJ driver in order to use your CA-Clipper database
+concurrently with FoxPro databases.  The CDXLOCK.OBJ driver is necessary to
+maintain compatible locking schemes between CA-Clipper and FoxPro.
+
+GT.OBJ
+Part of the CA-Clipper General Terminal driver.  This driver provides similar
+functionality to TERMINAL.LIB.  TERMINAL.LIB should be used instead of GT.OBJ
+except if you are using a 3rd party library which replaces TERMINAL.LIB.
+
+NULSYS.OBJ
+If your application does not require any RDDs (including the default DBFNTX
+driver), you can include NULSYS.OBJ into your link script as an object file to
+avoid having to include the DBFNTX.LIB.  This will increase the speed of your
+link as well decreasing the size of your application.
+
+NTXLOCK2.OBJ
+This driver will change the locking scheme for your databases so that you can
+have more records in a database file.  By default, CA-Clipper will lock
+records at 1 billion + the record number.  When databases get large enough it
+can bump into this locking area and cause problems.  With NTXLOCK2.OBJ, the
+locking offset is moved to 4 billion.  Please note, though, that using
+NTXLOCK2.OBJ will create indexes that are not compatible with older versions
+of CA-Clipper.
+
+__WAIT_4.OBJ
+Linking in __WAIT_4.OBJ before CA-Clipper Tools will eliminate the R6003
+and/or GPF at program startup using AMD or Cyrix processors.
+
+MDX*.OBJ, MSG*.OBJ, NTX*.OBJ (except NTXLOCK2.OBJ, see above)
+These files provide runtime national language support.  Please read NATION.DOC
+for more information.
+
+
+SOURCE Directory
+--------------------
+You can modify the source code in these directories as you wish, but please
+keep a copy of CA-Clipper's original files.
+
+DBU Files
+The files in this directory contain all of the source code for CA-Clipper's
+Database Utility.
+
+PE Files
+The files in this directory contain all of the source code for CA-Clipper's
+text editor.
+
+RL Files
+Source code for CA-Clipper's Report and Label Utility.
+
+SAMPLE Files
+Miscellaneous samples.
+
+GDBU Files
+A new set of sample files for CA-Clipper 5.3a.  This directory contains the
+source code for a completely re-written DBU in graphic mode using CA-Clipper
+5.3.  All of the source code is provided, including the RMake file, link
+script, and bitmap libraries.  Feel free to play with this source code as you
+wish as it can help you learn how to use the new Light Lib Graphics library.
+
+SYS Files
+Included in this directory are system files which are used by CA-Clipper.
+These include the Get System, Browse System, Menu System, Memo System, Error
+System, and RDD System.
+
+Some functions that are generated by CA-Clipper's form and menu editors call
+functions in these files.  Feel free to examine and modify these files as you
+wish, but please keep a copy of the original files.
+
+
+5. SUPPORTED OPERATING SYSTEMS
+==============================
+CA-Clipper is supported under all MS-DOS versions later than and including
+MS-DOS 3.3.
+
+The CA-Clipper Workbench is supported under Windows 3.1, Windows 3.11, Windows
+for Workgroups, and Windows 95.  Please note that Windows 95 was NOT
+supported in the initial release of CA-Clipper 5.3, but is supported in
+CA-Clipper 5.3a and above.  OS/2 (any version) and Windows NT are NOT fully
+supported at this time.
+
+
+6. MISSING STD.CH AND SET.CH DOCUMENTATION
+==========================================
+DBI Manifest Constants in Reference Guide NG:
+
+DBI_GETSCOPE       34  /* Locate codeblock */
+
+Missing SET COMMANDS in Reference Guide NG:
+
+SET MBLOCKSIZE TO <x>           => Set( _SET_MBLOCKSIZE, <x> )
+SET MFILEEXT TO <x>             => Set( _SET_MFILEEXT, <x> )
+SET STRICTREAD <x:ON,OFF,&>     => Set( _SET_STRICTREAD, <(x)> )
+SET STRICTREAD (<x>)            => Set( _SET_STRICTREAD, <x> )
+SET AUTOPEN <x:ON,OFF,&>        => Set( _SET_AUTOPEN, <(x)> )
+SET AUTOPEN (<x>)               => Set( _SET_AUTOPEN, <x> )
+SET AUTORDER TO <x>             => Set( _SET_AUTORDER, <x> )
+SET AUTOSHARE TO <x>            => Set( _SET_AUTOSHARE, <x> )
+SET MFILEEXT TO <x>             => Set( _SET_MFILEEXT, <x> )
+
+SET Manifest Constants in Reference Guide NG:
+
+14   _SET_TYPEAHEAD      Numeric        SET TYPEAHEAD TO
+21   _SET_EXTRA          Logical        None
+39   _SET_EVENTMASK      Number         SET EVENTMASK TO
+40   _SET_VIDEOMODE      Number         SET VIDEOMODE TO
+41   _SET_MBLOCKSIZE     Number         SET MEMOBLOCK TO
+42   _SET_MFILEEXT       Character      SET MFILEEXT  TO
+43   _SET_STRICTREAD     Logical        SET STRICTREAD
+44   _SET_OPTIMIZE       Logical        SET OPTIMIZE
+45   _SET_AUTOPEN        Logical        SET AUTOPEN
+46   _SET_AUTORDER       Logical        SET AUTORDER  TO
+47   _SET_AUTOSHARE      Logical        SET AUTOSHARE TO
+
+NATIONMSG Manifest Constants - from several files:
+
+_DIR_TITLE        1 // "Database Files    # Records    Last Update     Size"
+_LF_SAMPLES       2 // "Do you want more samples?"
+_RF_PAGENO        3 // "Page No."
+_RF_SUBTOTAL      4 // "** Subtotal **"
+_RF_SUBSUBTOTAL   5 // "* Subsubtotal *"
+_RF_TOTAL         6 // "*** Total ***"
+_GET_INSERT_ON    7 // "Ins"
+_GET_INSERT_OFF   8 // "   "
+_GET_INVD_DATE    9 // "Invalid Date"
+_GET_RANGE_FROM  10 // "Range: "
+_GET_RANGE_TO    11 // " - "
+_LF_YN           12 // "Y/N"
+
+
+7. MISCELLANEOUS
+================
+Production or Structural Indices (same prefix name as the Parent .DBF), are
+opened automatically with the database. Specify #include "Ord.Ch" with these.
+
+Specify #include "Ord.Ch" at the top of each .Prg which perform operations
+related to the following activities:
+
+   INDEXing
+   ORDERing
+   RELATIONs
+   SCOPE
+   FILTERing
+
+.CDX files default to auto-opening and order 0 ( Natural ). These defaults
+can be changed by SETting AUTOPEN and AUTORDER commands.
+
+SET ORDER TO TAG <cTagName> or (SET ORDER TO to nullify) with Multi-TAG RDDs.
+
+Corrections to Error Messages and Appendices Guide, Page I-2:
+Maximum length of a CHARACTER string:              65,516 bytes
+Maximun size string, or CHARACTER or MEMO FIELD    65,516 bytes
+Maximum key expression length: .cdx (_DBFCDX RDD)  240 bytes
